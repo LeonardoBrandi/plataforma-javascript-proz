@@ -433,6 +433,266 @@ console.log("Estoque restante:", produto.estoque);
 console.log("Produto em maiúsculas:", produto.nome.toUpperCase());`
       }
     ]
+  },
+  {
+    id: "if",
+    titulo: "6. Estrutura condicional — if",
+    descricao: "Tomada de decisões com condições simples.",
+    atividades: [
+      {
+        titulo: "Atividade 26 — Verificação de maioridade",
+        enunciado: "Mostre uma mensagem somente quando a pessoa tiver 18 anos ou mais.",
+        codigo: `let idade = 20;
+
+// Crie a condição abaixo`,
+        dica: "Use if (idade >= 18) e coloque a mensagem entre chaves.",
+        solucao: `if (idade >= 18) {
+  console.log("A pessoa é maior de idade.");
+}`
+      },
+      {
+        titulo: "Atividade 27 — Nota aprovada",
+        enunciado: "Informe que o aluno foi aprovado quando sua nota for maior ou igual a 7.",
+        codigo: `let nota = 8.5;
+
+if (________) {
+  console.log("Aluno aprovado!");
+}`,
+        dica: "Compare nota com 7 usando o operador >=.",
+        solucao: `if (nota >= 7) {
+  console.log("Aluno aprovado!");
+}`
+      },
+      {
+        titulo: "Atividade 28 — Produto em estoque",
+        enunciado: "Mostre o nome do produto apenas quando houver pelo menos uma unidade em estoque.",
+        codigo: `let produto = {
+  nome: "Teclado",
+  estoque: 4
+};
+
+// Verifique o estoque`,
+        dica: "Acesse a quantidade com produto.estoque.",
+        solucao: `if (produto.estoque > 0) {
+  console.log(produto.nome + " está disponível.");
+}`
+      },
+      {
+        titulo: "Atividade 29 — Desconto na compra",
+        enunciado: "Aplique 10% de desconto somente quando o valor da compra for igual ou superior a R$200.",
+        codigo: `let valorCompra = 250;
+
+// Calcule e mostre o valor com desconto`,
+        dica: "Multiplique o valor por 0.9 dentro do if.",
+        solucao: `if (valorCompra >= 200) {
+  valorCompra *= 0.9;
+  console.log("Valor com desconto: R$", valorCompra);
+}`
+      },
+      {
+        titulo: "Atividade 30 — Acesso ao sistema",
+        enunciado: "Libere o acesso somente se o usuário estiver ativo e possuir senha válida.",
+        codigo: `let usuarioAtivo = true;
+let senhaValida = true;
+
+// Combine as duas condições`,
+        dica: "Use o operador && para exigir que as duas condições sejam verdadeiras.",
+        solucao: `if (usuarioAtivo && senhaValida) {
+  console.log("Acesso liberado.");
+}`
+      }
+    ]
+  },
+  {
+    id: "else-if",
+    titulo: "7. Condições encadeadas — else if",
+    descricao: "Avaliação de diferentes possibilidades em sequência.",
+    atividades: [
+      {
+        titulo: "Atividade 31 — Situação do aluno",
+        enunciado: "Classifique a nota como aprovado, recuperação ou reprovado.",
+        codigo: `let nota = 6;
+
+if (nota >= 7) {
+  console.log("Aprovado");
+} ______ (nota >= 5) {
+  console.log("Recuperação");
+} ______ {
+  console.log("Reprovado");
+}`,
+        dica: "Complete com else if e else.",
+        solucao: `if (nota >= 7) {
+  console.log("Aprovado");
+} else if (nota >= 5) {
+  console.log("Recuperação");
+} else {
+  console.log("Reprovado");
+}`
+      },
+      {
+        titulo: "Atividade 32 — Faixa etária",
+        enunciado: "Classifique uma pessoa como criança, adolescente, adulta ou idosa.",
+        codigo: `let idade = 35;
+
+// Crie as condições para as quatro faixas`,
+        dica: "Teste nesta ordem: menor que 12, menor que 18, menor que 60 e, por fim, else.",
+        solucao: `if (idade < 12) {
+  console.log("Criança");
+} else if (idade < 18) {
+  console.log("Adolescente");
+} else if (idade < 60) {
+  console.log("Adulto");
+} else {
+  console.log("Idoso");
+}`
+      },
+      {
+        titulo: "Atividade 33 — Nível de bateria",
+        enunciado: "Mostre bateria alta, média ou baixa de acordo com a porcentagem.",
+        codigo: `let bateria = 45;
+
+// Alta: 70 ou mais
+// Média: 30 ou mais
+// Baixa: abaixo de 30`,
+        dica: "Comece testando o maior limite.",
+        solucao: `if (bateria >= 70) {
+  console.log("Bateria alta");
+} else if (bateria >= 30) {
+  console.log("Bateria média");
+} else {
+  console.log("Bateria baixa");
+}`
+      },
+      {
+        titulo: "Atividade 34 — Frete por valor",
+        enunciado: "Defina frete grátis para compras a partir de R$300, R$15 a partir de R$150 e R$25 para as demais.",
+        codigo: `let compra = 180;
+let frete;
+
+// Defina o valor do frete`,
+        dica: "Atribua um valor à variável frete em cada bloco.",
+        solucao: `if (compra >= 300) {
+  frete = 0;
+} else if (compra >= 150) {
+  frete = 15;
+} else {
+  frete = 25;
+}
+
+console.log("Frete: R$", frete);`
+      },
+      {
+        titulo: "Atividade 35 — Classificação de temperatura",
+        enunciado: "Classifique a temperatura como muito quente, agradável, fria ou muito fria.",
+        codigo: `let temperatura = 22;
+
+// Muito quente: 30 ou mais
+// Agradável: 20 ou mais
+// Fria: 10 ou mais
+// Muito fria: abaixo de 10`,
+        dica: "Use if, dois else if e um else.",
+        solucao: `if (temperatura >= 30) {
+  console.log("Muito quente");
+} else if (temperatura >= 20) {
+  console.log("Agradável");
+} else if (temperatura >= 10) {
+  console.log("Fria");
+} else {
+  console.log("Muito fria");
+}`
+      }
+    ]
+  },
+  {
+    id: "switch",
+    titulo: "8. Estrutura condicional — switch",
+    descricao: "Seleção de ações a partir de valores específicos.",
+    atividades: [
+      {
+        titulo: "Atividade 36 — Dia da semana",
+        enunciado: "Mostre o nome do dia correspondente a um número de 1 a 7.",
+        codigo: `let dia = 2;
+
+switch (dia) {
+  // Crie os casos
+}`,
+        dica: "Use case 1:, case 2: e assim por diante. Finalize cada caso com break.",
+        solucao: `switch (dia) {
+  case 1: console.log("Domingo"); break;
+  case 2: console.log("Segunda-feira"); break;
+  case 3: console.log("Terça-feira"); break;
+  case 4: console.log("Quarta-feira"); break;
+  case 5: console.log("Quinta-feira"); break;
+  case 6: console.log("Sexta-feira"); break;
+  case 7: console.log("Sábado"); break;
+  default: console.log("Dia inválido");
+}`
+      },
+      {
+        titulo: "Atividade 37 — Menu de atendimento",
+        enunciado: "Mostre uma opção de atendimento para os números 1, 2 e 3.",
+        codigo: `let opcao = 2;
+
+// 1: Financeiro
+// 2: Suporte técnico
+// 3: Cancelamento`,
+        dica: "Inclua default para uma opção inexistente.",
+        solucao: `switch (opcao) {
+  case 1: console.log("Financeiro"); break;
+  case 2: console.log("Suporte técnico"); break;
+  case 3: console.log("Cancelamento"); break;
+  default: console.log("Opção inválida");
+}`
+      },
+      {
+        titulo: "Atividade 38 — Categoria do produto",
+        enunciado: "Mostre a seção da loja conforme a categoria informada.",
+        codigo: `let categoria = "eletronicos";
+
+switch (categoria) {
+  // Complete os casos
+}`,
+        dica: "Crie casos para eletronicos, roupas e alimentos.",
+        solucao: `switch (categoria) {
+  case "eletronicos": console.log("Seção de tecnologia"); break;
+  case "roupas": console.log("Seção de vestuário"); break;
+  case "alimentos": console.log("Seção de mercado"); break;
+  default: console.log("Categoria não encontrada");
+}`
+      },
+      {
+        titulo: "Atividade 39 — Conceito da nota",
+        enunciado: "Converta um conceito A, B, C ou D em uma mensagem de desempenho.",
+        codigo: `let conceito = "B";
+
+// Use switch para mostrar o desempenho`,
+        dica: "Os valores de texto dos cases precisam estar entre aspas.",
+        solucao: `switch (conceito) {
+  case "A": console.log("Excelente"); break;
+  case "B": console.log("Muito bom"); break;
+  case "C": console.log("Regular"); break;
+  case "D": console.log("Precisa melhorar"); break;
+  default: console.log("Conceito inválido");
+}`
+      },
+      {
+        titulo: "Atividade 40 — Calculadora com switch",
+        enunciado: "Execute uma operação matemática de acordo com o símbolo informado.",
+        codigo: `let numero1 = 12;
+let numero2 = 4;
+let operacao = "*";
+
+// Crie os casos +, -, * e /`,
+        dica: "Use a variável operacao no switch e calcule dentro de cada case.",
+        solucao: `switch (operacao) {
+  case "+": console.log(numero1 + numero2); break;
+  case "-": console.log(numero1 - numero2); break;
+  case "*": console.log(numero1 * numero2); break;
+  case "/": console.log(numero1 / numero2); break;
+  default: console.log("Operação inválida");
+}`
+      }
+    ]
   }
 ];
 
@@ -466,7 +726,7 @@ function renderMenu() {
     link.innerHTML = `
       <span class="topic-num">${temaIndex + 1}</span>
       <span>${tema.titulo.replace(/^\d+\.\s*/, "")}</span>
-      <small>${concluidas}/5</small>
+      <small>${concluidas}/${tema.atividades.length}</small>
     `;
     menuTemas.appendChild(link);
   });
@@ -564,7 +824,7 @@ function renderConteudo() {
 }
 
 function atualizarProgresso() {
-  const total = 25;
+  const total = temas.reduce((soma, tema) => soma + tema.atividades.length, 0);
   const concluidas = Object.values(estado).filter(Boolean).length;
   const percentual = Math.round((concluidas / total) * 100);
 
