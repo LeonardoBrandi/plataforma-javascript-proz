@@ -1,0 +1,649 @@
+const temas = [
+  {
+    id: "variaveis",
+    titulo: "1. Tipos de variáveis",
+    descricao: "String, Number, Boolean e uso de typeof.",
+    atividades: [
+      {
+        titulo: "Atividade 1 — Cadastro de aluno",
+        enunciado: "Crie variáveis para armazenar nome, idade, curso, nota e situação da matrícula. Depois mostre os valores e descubra seus tipos.",
+        codigo: `let nome = "Mariana";
+let idade = 19;
+let curso = "Desenvolvimento de Sistemas";
+let nota = 8.5;
+let matriculado = true;
+
+console.log("Nome:", nome);
+console.log("Idade:", idade);
+console.log("Curso:", curso);
+console.log("Nota:", nota);
+console.log("Matriculado:", matriculado);`,
+        dica: "Use typeof nome, typeof idade e assim por diante.",
+        solucao: `console.log(typeof nome);
+console.log(typeof idade);
+console.log(typeof curso);
+console.log(typeof nota);
+console.log(typeof matriculado);`
+      },
+      {
+        titulo: "Atividade 2 — Cadastro de produto",
+        enunciado: "Complete as variáveis de um produto e depois identifique o tipo de cada informação.",
+        codigo: `let produto = "________";
+let preco = ________;
+let quantidade = ________;
+let disponivel = ________;
+
+console.log("Produto:", produto);
+console.log("Preço:", preco);
+console.log("Quantidade:", quantidade);
+console.log("Disponível:", disponivel);`,
+        dica: "Texto fica entre aspas. Número não precisa de aspas. Boolean usa true ou false.",
+        solucao: `let produto = "Mouse Gamer";
+let preco = 150;
+let quantidade = 8;
+let disponivel = true;
+
+console.log(typeof produto);
+console.log(typeof preco);
+console.log(typeof quantidade);
+console.log(typeof disponivel);`
+      },
+      {
+        titulo: "Atividade 3 — Descobrindo os tipos",
+        enunciado: "Antes de executar, tente prever os tipos das variáveis. Depois confirme com typeof.",
+        codigo: `let cidade = "Juiz de Fora";
+let populacao = 500000;
+let possuiShopping = true;
+let temperatura = 24.5;`,
+        dica: "24.5 continua sendo Number em JavaScript.",
+        solucao: `console.log(typeof cidade);          // string
+console.log(typeof populacao);       // number
+console.log(typeof possuiShopping);  // boolean
+console.log(typeof temperatura);     // number`
+      },
+      {
+        titulo: "Atividade 4 — Perfil de jogador",
+        enunciado: "Crie um perfil de jogador com nome, nível, moedas e status online. Acrescente depois duas novas variáveis.",
+        codigo: `let jogador = "Lucas";
+let nivel = 15;
+let moedas = 850;
+let online = true;
+
+console.log("Jogador:", jogador);
+console.log("Nível:", nivel);
+console.log("Moedas:", moedas);
+console.log("Online:", online);`,
+        dica: "Adicione possuiArmadura como Boolean e nomePersonagem como String.",
+        solucao: `let possuiArmadura = false;
+let nomePersonagem = "DarkWolf";
+
+console.log(typeof possuiArmadura);
+console.log(typeof nomePersonagem);`
+      },
+      {
+        titulo: "Atividade 5 — Seu próprio cadastro",
+        enunciado: "Crie um programa contendo pelo menos 2 Strings, 2 Numbers e 2 Booleans. Mostre tudo no console e verifique os tipos.",
+        codigo: `// Crie suas variáveis abaixo
+
+`,
+        dica: "Você pode representar uma pessoa, um jogo, uma loja ou um computador.",
+        solucao: `let nome = "Ana";
+let cidade = "Juiz de Fora";
+let idade = 20;
+let nota = 9;
+let matriculado = true;
+let maiorDeIdade = true;
+
+console.log(nome, typeof nome);
+console.log(cidade, typeof cidade);
+console.log(idade, typeof idade);
+console.log(nota, typeof nota);
+console.log(matriculado, typeof matriculado);
+console.log(maiorDeIdade, typeof maiorDeIdade);`
+      }
+    ]
+  },
+  {
+    id: "atribuicao",
+    titulo: "2. Atribuição de valores",
+    descricao: "Uso de =, alteração de valores e diferença prática entre let e const.",
+    atividades: [
+      {
+        titulo: "Atividade 6 — Pontuação de jogo",
+        enunciado: "Altere a pontuação de um jogador várias vezes e mostre cada resultado.",
+        codigo: `let pontos = 100;
+
+console.log("Pontuação inicial:", pontos);
+
+pontos = 150;
+console.log("Nova pontuação:", pontos);`,
+        dica: "Faça novas atribuições usando pontos = novoValor.",
+        solucao: `pontos = 200;
+console.log(pontos);
+
+pontos = 350;
+console.log(pontos);
+
+pontos = 500;
+console.log(pontos);`
+      },
+      {
+        titulo: "Atividade 7 — Atualizando preço",
+        enunciado: "O teclado custa R$100. Aumente para R$120 e depois reduza para R$110.",
+        codigo: `let produto = "Teclado";
+let preco = 100;
+
+console.log("Preço inicial:", preco);
+
+// complete abaixo
+preco = ______;
+console.log("Novo preço:", preco);`,
+        dica: "A nova atribuição substitui o valor anterior.",
+        solucao: `preco = 120;
+console.log("Após aumento:", preco);
+
+preco = 110;
+console.log("Após redução:", preco);`
+      },
+      {
+        titulo: "Atividade 8 — Status de tarefa",
+        enunciado: "Uma tarefa começa não concluída. Depois de executada, altere seu status para true.",
+        codigo: `let tarefa = "Estudar JavaScript";
+let concluida = false;
+
+console.log(tarefa);
+console.log("Concluída:", concluida);`,
+        dica: "Não crie outra variável. Altere a existente.",
+        solucao: `concluida = true;
+console.log("Concluída:", concluida);`
+      },
+      {
+        titulo: "Atividade 9 — Saldo bancário",
+        enunciado: "Simule mudanças em um saldo: 1000 → 1500 → 1300 → 2000.",
+        codigo: `let saldo = 1000;
+console.log("Saldo inicial:", saldo);`,
+        dica: "Após cada alteração, use console.log para acompanhar o valor.",
+        solucao: `saldo = 1500;
+console.log("Saldo:", saldo);
+
+saldo = 1300;
+console.log("Saldo:", saldo);
+
+saldo = 2000;
+console.log("Saldo final:", saldo);`
+      },
+      {
+        titulo: "Atividade 10 — Corrigindo um erro",
+        enunciado: "O código tenta alterar uma variável criada com const. Execute, observe o erro e corrija.",
+        codigo: `const idade = 18;
+idade = 19;
+
+console.log(idade);`,
+        dica: "Qual declaração permite que o valor seja alterado posteriormente?",
+        solucao: `let idade = 18;
+idade = 19;
+
+console.log(idade);`
+      }
+    ]
+  },
+  {
+    id: "objetos",
+    titulo: "3. Acesso a propriedades — notação de ponto",
+    descricao: "Criação de objetos e acesso por objeto.propriedade.",
+    atividades: [
+      {
+        titulo: "Atividade 11 — Cadastro de pessoa",
+        enunciado: "Acesse as propriedades do objeto e depois acrescente uma profissão.",
+        codigo: `let pessoa = {
+  nome: "Carlos",
+  idade: 22,
+  cidade: "São Paulo"
+};
+
+console.log(pessoa.nome);
+console.log(pessoa.idade);
+console.log(pessoa.cidade);`,
+        dica: "Você pode criar pessoa.profissao = 'Programador'.",
+        solucao: `pessoa.profissao = "Programador";
+console.log(pessoa.profissao);`
+      },
+      {
+        titulo: "Atividade 12 — Produto",
+        enunciado: "Complete os acessos usando a notação de ponto.",
+        codigo: `let produto = {
+  nome: "Notebook",
+  preco: 3500,
+  estoque: 10
+};
+
+console.log("Produto:", produto.________);
+console.log("Preço:", produto.________);
+console.log("Estoque:", produto.________);`,
+        dica: "Use exatamente os nomes das propriedades do objeto.",
+        solucao: `console.log("Produto:", produto.nome);
+console.log("Preço:", produto.preco);
+console.log("Estoque:", produto.estoque);`
+      },
+      {
+        titulo: "Atividade 13 — Personagem de jogo",
+        enunciado: "Mostre nome, vida, ataque e status de um personagem utilizando somente notação de ponto.",
+        codigo: `let personagem = {
+  nome: "Arthas",
+  vida: 100,
+  ataque: 30,
+  vivo: true
+};`,
+        dica: "Exemplo: personagem.nome.",
+        solucao: `console.log("Personagem:", personagem.nome);
+console.log("Vida:", personagem.vida);
+console.log("Ataque:", personagem.ataque);
+console.log("Está vivo:", personagem.vivo);`
+      },
+      {
+        titulo: "Atividade 14 — Alterando uma propriedade",
+        enunciado: "Altere os pontos do jogador e acrescente a propriedade nivel.",
+        codigo: `let jogador = {
+  nome: "Pedro",
+  pontos: 100
+};
+
+console.log(jogador.pontos);
+
+jogador.pontos = 200;`,
+        dica: "Propriedades também podem receber novos valores.",
+        solucao: `jogador.nivel = 2;
+
+console.log(jogador.nome + " está no nível " + jogador.nivel + " com " + jogador.pontos + " pontos.");`
+      },
+      {
+        titulo: "Atividade 15 — Objeto computador",
+        enunciado: "Crie um objeto computador contendo marca, processador, memoriaRam e ligado. Mostre as quatro propriedades.",
+        codigo: `let computador = {
+  // complete aqui
+};`,
+        dica: "Separe as propriedades por vírgula.",
+        solucao: `let computador = {
+  marca: "Dell",
+  processador: "Intel Core i5",
+  memoriaRam: 16,
+  ligado: true
+};
+
+console.log(computador.marca);
+console.log(computador.processador);
+console.log(computador.memoriaRam + " GB");
+console.log(computador.ligado);`
+      }
+    ]
+  },
+  {
+    id: "metodos",
+    titulo: "4. Chamada de métodos",
+    descricao: "Uso prático de toUpperCase, toLowerCase, includes, trim e length.",
+    atividades: [
+      {
+        titulo: "Atividade 16 — Maiúsculas e minúsculas",
+        enunciado: "Transforme textos utilizando toUpperCase() e toLowerCase().",
+        codigo: `let linguagem = "javascript";
+
+console.log(linguagem.toUpperCase());`,
+        dica: "Crie outra variável com JAVASCRIPT e aplique toLowerCase().",
+        solucao: `let linguagem2 = "JAVASCRIPT";
+console.log(linguagem2.toLowerCase());`
+      },
+      {
+        titulo: "Atividade 17 — Tamanho do texto",
+        enunciado: "Descubra quantos caracteres existem em um nome e em uma frase.",
+        codigo: `let nome = "Leonardo";
+
+console.log(nome.length);`,
+        dica: "length é uma propriedade, por isso não usa parênteses.",
+        solucao: `let frase = "Estou aprendendo JavaScript";
+console.log(frase.length);`
+      },
+      {
+        titulo: "Atividade 18 — Procurando palavras",
+        enunciado: "Verifique se determinadas palavras existem dentro de uma frase.",
+        codigo: `let frase = "Eu gosto de JavaScript";
+
+console.log(frase.includes("JavaScript"));
+console.log(frase.includes("Python"));`,
+        dica: "includes retorna true ou false.",
+        solucao: `let texto = "Hoje teremos aula de programação";
+
+console.log(texto.includes("programação"));
+console.log(texto.includes("banco de dados"));`
+      },
+      {
+        titulo: "Atividade 19 — Removendo espaços",
+        enunciado: "Remova espaços extras de um usuário e depois transforme o resultado em maiúsculas.",
+        codigo: `let usuario = "     admin     ";
+
+console.log(usuario);
+console.log(usuario.trim());`,
+        dica: "É possível encadear chamadas de métodos.",
+        solucao: `console.log(usuario.trim().toUpperCase());`
+      },
+      {
+        titulo: "Atividade 20 — Laboratório de métodos",
+        enunciado: "Mostre a frase original, transforme em maiúsculas, descubra o tamanho e pesquise duas palavras.",
+        codigo: `let mensagem = "programar é praticar";`,
+        dica: "Utilize toUpperCase(), length e includes().",
+        solucao: `console.log("Original:", mensagem);
+console.log("Maiúsculas:", mensagem.toUpperCase());
+console.log("Tamanho:", mensagem.length);
+console.log("Tem praticar?", mensagem.includes("praticar"));
+console.log("Tem Java?", mensagem.includes("Java"));`
+      }
+    ]
+  },
+  {
+    id: "operadores",
+    titulo: "5. Operadores",
+    descricao: "Operadores aritméticos, de comparação e de atribuição.",
+    atividades: [
+      {
+        titulo: "Atividade 21 — Calculadora básica",
+        enunciado: "Calcule soma, subtração, multiplicação e divisão entre dois valores.",
+        codigo: `let numero1 = 20;
+let numero2 = 5;
+
+// Desenvolva abaixo`,
+        dica: "Use +, -, * e /.",
+        solucao: `console.log("Soma:", numero1 + numero2);
+console.log("Subtração:", numero1 - numero2);
+console.log("Multiplicação:", numero1 * numero2);
+console.log("Divisão:", numero1 / numero2);`
+      },
+      {
+        titulo: "Atividade 22 — Compra de camisetas",
+        enunciado: "Calcule o total de 4 camisetas de R$35 e depois o troco para um pagamento de R$200.",
+        codigo: `let preco = 35;
+let quantidade = 4;
+
+let total = ______ * ______;
+
+console.log("Valor total: R$", total);`,
+        dica: "Total = preço × quantidade.",
+        solucao: `let total = preco * quantidade;
+let pagamento = 200;
+let troco = pagamento - total;
+
+console.log("Valor total: R$", total);
+console.log("Troco: R$", troco);`
+      },
+      {
+        titulo: "Atividade 23 — Verificação de idade",
+        enunciado: "Verifique se uma pessoa possui 18 anos ou mais e mostre Sim ou Não.",
+        codigo: `let idade = 20;
+
+console.log(idade >= 18);`,
+        dica: "Use o operador ternário: condição ? valor1 : valor2.",
+        solucao: `let maiorDeIdade = idade >= 18 ? "Sim" : "Não";
+console.log("Maior de idade:", maiorDeIdade);`
+      },
+      {
+        titulo: "Atividade 24 — Sistema de pontos",
+        enunciado: "Aplique operadores de atribuição em sequência e tente prever o valor final antes de executar.",
+        codigo: `let pontos = 100;
+
+pontos += 50;
+pontos -= 20;
+pontos *= 2;
+
+console.log("Resultado final:", pontos);`,
+        dica: "100 + 50 = 150; depois continue calculando.",
+        solucao: `// 100 + 50 = 150
+// 150 - 20 = 130
+// 130 * 2 = 260
+
+console.log("Resultado final:", pontos); // 260`
+      },
+      {
+        titulo: "Atividade 25 — Desafio final: sistema de loja",
+        enunciado: "Combine objetos, propriedades, operadores, comparação e métodos em um único exercício.",
+        codigo: `let produto = {
+  nome: "Monitor",
+  preco: 800,
+  estoque: 10
+};
+
+let quantidadeCompra = 2;
+
+// 1. Mostre nome, preço e estoque
+// 2. Calcule o valor total
+// 3. Verifique se existe estoque
+// 4. Atualize o estoque
+// 5. Mostre o nome do produto em maiúsculas`,
+        dica: "Use produto.preco * quantidadeCompra e produto.estoque >= quantidadeCompra.",
+        solucao: `console.log("Produto:", produto.nome);
+console.log("Preço: R$", produto.preco);
+console.log("Estoque:", produto.estoque);
+
+let total = produto.preco * quantidadeCompra;
+let possuiEstoque = produto.estoque >= quantidadeCompra;
+
+produto.estoque -= quantidadeCompra;
+
+console.log("Quantidade:", quantidadeCompra);
+console.log("Total da compra: R$", total);
+console.log("Possui estoque:", possuiEstoque);
+console.log("Estoque restante:", produto.estoque);
+console.log("Produto em maiúsculas:", produto.nome.toUpperCase());`
+      }
+    ]
+  }
+];
+
+const conteudo = document.getElementById("conteudoAtividades");
+const menuTemas = document.getElementById("menuTemas");
+const estado = JSON.parse(localStorage.getItem("jsAcademyConcluidas") || "{}");
+
+function escaparHtml(texto) {
+  return texto
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;");
+}
+
+function contarTema(temaIndex) {
+  let concluidas = 0;
+  temas[temaIndex].atividades.forEach((_, i) => {
+    const id = `tema-${temaIndex}-atividade-${i}`;
+    if (estado[id]) concluidas++;
+  });
+  return concluidas;
+}
+
+function renderMenu() {
+  menuTemas.innerHTML = "";
+  temas.forEach((tema, temaIndex) => {
+    const concluidas = contarTema(temaIndex);
+    const link = document.createElement("a");
+    link.className = "topic-link";
+    link.href = `#${tema.id}`;
+    link.innerHTML = `
+      <span class="topic-num">${temaIndex + 1}</span>
+      <span>${tema.titulo.replace(/^\d+\.\s*/, "")}</span>
+      <small>${concluidas}/5</small>
+    `;
+    menuTemas.appendChild(link);
+  });
+}
+
+function renderConteudo() {
+  conteudo.innerHTML = "";
+
+  let numeroGlobal = 0;
+
+  temas.forEach((tema, temaIndex) => {
+    const section = document.createElement("section");
+    section.id = tema.id;
+    section.className = "topic-section";
+
+    const concluidasTema = contarTema(temaIndex);
+
+    section.innerHTML = `
+      <div class="topic-heading">
+        <div>
+          <span class="eyebrow">Módulo ${temaIndex + 1}</span>
+          <h2>${tema.titulo}</h2>
+          <p>${tema.descricao}</p>
+        </div>
+        <div class="topic-badge">${concluidasTema} / 5</div>
+      </div>
+    `;
+
+    tema.atividades.forEach((atividade, atividadeIndex) => {
+      numeroGlobal++;
+      const id = `tema-${temaIndex}-atividade-${atividadeIndex}`;
+      const concluida = !!estado[id];
+
+      const card = document.createElement("article");
+      card.className = "activity-card" + (concluida ? " completed" : "");
+      card.dataset.id = id;
+
+      card.innerHTML = `
+        <div class="activity-top">
+          <div class="activity-title-wrap">
+            <span class="activity-index">${numeroGlobal}</span>
+            <div>
+              <h3>${atividade.titulo.replace(/^Atividade \d+ — /, "")}</h3>
+              <p>${atividade.enunciado}</p>
+            </div>
+          </div>
+          <span class="status-chip">${concluida ? "Concluída" : "Em estudo"}</span>
+        </div>
+
+        <div class="code-window">
+          <div class="code-toolbar">
+            <span class="window-dots"><i></i><i></i><i></i></span>
+            <span>JavaScript</span>
+          </div>
+          <pre><code>${escaparHtml(atividade.codigo)}</code></pre>
+        </div>
+
+        <div class="activity-actions">
+          <button class="action-btn copiar-codigo">Copiar código</button>
+          <button class="action-btn mostrar-dica">Mostrar dica</button>
+          <button class="action-btn mostrar-solucao">Ver solução</button>
+          <button class="action-btn primary concluir">
+            ${concluida ? "Concluída ✓" : "Marcar como concluída"}
+          </button>
+        </div>
+
+        <div class="extra-box dica hidden">
+          <strong>Dica de estudo</strong>
+          <p>${atividade.dica}</p>
+        </div>
+
+        <div class="extra-box solution-box solucao hidden">
+          <strong>Solução sugerida</strong>
+          <div class="code-window" style="margin:12px 0 0">
+            <div class="code-toolbar">
+              <span class="window-dots"><i></i><i></i><i></i></span>
+              <span>Solução</span>
+            </div>
+            <pre><code>${escaparHtml(atividade.solucao)}</code></pre>
+          </div>
+          <div class="activity-actions" style="padding:14px 0 0">
+            <button class="action-btn copiar-solucao">Copiar solução</button>
+          </div>
+        </div>
+      `;
+
+      section.appendChild(card);
+    });
+
+    conteudo.appendChild(section);
+  });
+
+  atualizarProgresso();
+  renderMenu();
+}
+
+function atualizarProgresso() {
+  const total = 25;
+  const concluidas = Object.values(estado).filter(Boolean).length;
+  const percentual = Math.round((concluidas / total) * 100);
+
+  document.getElementById("percentualLateral").textContent = percentual + "%";
+  document.getElementById("textoLateral").textContent = `${concluidas} de ${total} atividades`;
+  document.getElementById("barraLateral").style.width = percentual + "%";
+
+  document.getElementById("percentualHero").textContent = percentual + "%";
+  document.getElementById("heroConcluidas").textContent = `${concluidas} concluída${concluidas === 1 ? "" : "s"}`;
+  document.getElementById("circleProgress").style.setProperty("--p", percentual);
+
+  document.getElementById("conclusao").classList.toggle("hidden", concluidas !== total);
+}
+
+async function copiar(texto, botao) {
+  try {
+    await navigator.clipboard.writeText(texto);
+    const anterior = botao.textContent;
+    botao.textContent = "Copiado ✓";
+    setTimeout(() => botao.textContent = anterior, 1200);
+  } catch {
+    alert("Não foi possível copiar automaticamente. Selecione o código manualmente.");
+  }
+}
+
+document.addEventListener("click", (event) => {
+  const card = event.target.closest(".activity-card");
+
+  if (event.target.id === "menuMobile") {
+    document.getElementById("sidebar").classList.toggle("open");
+    return;
+  }
+
+  if (event.target.id === "alternarTema") {
+    document.body.classList.toggle("dark");
+    localStorage.setItem("jsAcademyTema", document.body.classList.contains("dark") ? "dark" : "light");
+    return;
+  }
+
+  if (event.target.closest(".topic-link")) {
+    document.getElementById("sidebar").classList.remove("open");
+  }
+
+  if (!card) return;
+
+  if (event.target.classList.contains("copiar-codigo")) {
+    copiar(card.querySelector(".code-window code").innerText, event.target);
+  }
+
+  if (event.target.classList.contains("mostrar-dica")) {
+    const box = card.querySelector(".dica");
+    box.classList.toggle("hidden");
+    event.target.textContent = box.classList.contains("hidden") ? "Mostrar dica" : "Ocultar dica";
+  }
+
+  if (event.target.classList.contains("mostrar-solucao")) {
+    const box = card.querySelector(".solucao");
+    box.classList.toggle("hidden");
+    event.target.textContent = box.classList.contains("hidden") ? "Ver solução" : "Ocultar solução";
+  }
+
+  if (event.target.classList.contains("copiar-solucao")) {
+    copiar(card.querySelector(".solucao code").innerText, event.target);
+  }
+
+  if (event.target.classList.contains("concluir")) {
+    const id = card.dataset.id;
+    estado[id] = !estado[id];
+
+    localStorage.setItem("jsAcademyConcluidas", JSON.stringify(estado));
+    renderConteudo();
+
+    const novoCard = document.querySelector(`[data-id="${id}"]`);
+    if (novoCard) novoCard.scrollIntoView({ block: "center" });
+  }
+});
+
+if (localStorage.getItem("jsAcademyTema") === "dark") {
+  document.body.classList.add("dark");
+}
+
+renderConteudo();

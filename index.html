@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JavaScript Academy | Revisão Interativa</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark">JS</div>
+        <div>
+          <strong>JavaScript Academy</strong>
+          <span>Revisão Interativa</span>
+        </div>
+      </div>
+
+      <div class="side-progress">
+        <div class="side-progress-top">
+          <span>Progresso geral</span>
+          <strong id="percentualLateral">0%</strong>
+        </div>
+        <div class="progress-track">
+          <div id="barraLateral"></div>
+        </div>
+        <small id="textoLateral">0 de 25 atividades</small>
+      </div>
+
+      <nav id="menuTemas" class="topic-nav"></nav>
+
+      <div class="sidebar-footer">
+        <button id="alternarTema" class="secondary-btn">Alternar tema</button>
+      </div>
+    </aside>
+
+    <div class="main-area">
+      <header class="topbar">
+        <button id="menuMobile" class="menu-mobile" aria-label="Abrir menu">☰</button>
+        <div>
+          <span class="eyebrow">Desenvolvimento de Sistemas</span>
+          <h1>Revisão de JavaScript</h1>
+          <p>25 atividades práticas com apoio para estudo no OneCompiler.</p>
+        </div>
+        <a class="onecompiler-btn" href="https://onecompiler.com/javascript" target="_blank">Abrir OneCompiler ↗</a>
+      </header>
+
+      <main>
+        <section class="hero-panel">
+          <div>
+            <span class="pill">Fundamentos</span>
+            <h2>Aprenda revisando, testando e alterando o código.</h2>
+            <p>
+              Avance por cada tema, revele dicas apenas quando necessário e consulte
+              a solução somente depois de tentar desenvolver a atividade.
+            </p>
+          </div>
+
+          <div class="hero-progress">
+            <div class="circle-progress" id="circleProgress">
+              <span id="percentualHero">0%</span>
+            </div>
+            <div>
+              <strong id="heroConcluidas">0 concluídas</strong>
+              <span>de 25 atividades</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="stats-grid">
+          <div class="stat-card"><span>5</span><small>Temas</small></div>
+          <div class="stat-card"><span>25</span><small>Atividades</small></div>
+          <div class="stat-card"><span>100%</span><small>Prático</small></div>
+          <div class="stat-card"><span>OneCompiler</span><small>Ambiente sugerido</small></div>
+        </section>
+
+        <section id="conteudoAtividades"></section>
+
+        <section id="conclusao" class="completion-panel hidden">
+          <div class="completion-icon">✓</div>
+          <div>
+            <span class="eyebrow">Revisão concluída</span>
+            <h2>Parabéns! Você finalizou as 25 atividades.</h2>
+            <p>Agora refaça os desafios sem consultar as soluções para consolidar os fundamentos.</p>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <p>JavaScript Academy — material de revisão prática para iniciantes.</p>
+      </footer>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
