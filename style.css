@@ -533,6 +533,84 @@ footer {
   color: var(--muted);
 }
 
+.challenge-section { scroll-margin-top: 24px; }
+.challenge-badge {
+  color: #92400e;
+  background: #fef3c7;
+  border-color: #fde68a;
+}
+.challenge-card { border-color: rgba(245,158,11,.45); }
+.challenge-steps,
+.student-code-area,
+.challenge-comparison {
+  margin: 8px 22px 22px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--surface-soft);
+}
+.challenge-steps ol {
+  margin: 12px 0 16px;
+  padding-left: 22px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.challenge-steps p { line-height: 1.6; }
+.challenge-files {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  padding: 0 22px 22px;
+}
+.challenge-file { min-width: 0; }
+.challenge-file .code-window { margin: 0; height: 330px; }
+.challenge-file pre { height: 282px; }
+.challenge-file .action-btn { margin-top: 10px; width: 100%; }
+.student-code-area h3,
+.comparison-heading h3 { margin: 5px 0 6px; }
+.student-editors {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+}
+.student-editors label {
+  display: grid;
+  gap: 8px;
+  font-weight: 800;
+}
+.student-editors textarea {
+  min-height: 260px;
+  resize: vertical;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 14px;
+  color: var(--code-text);
+  background: var(--code);
+  font: .86rem/1.55 "Cascadia Code", "Fira Code", Consolas, monospace;
+}
+.student-editors textarea:focus {
+  outline: 3px solid rgba(99,91,255,.22);
+  border-color: var(--primary);
+}
+.challenge-submit {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 16px;
+}
+.challenge-submit small { color: var(--muted); }
+.action-btn:disabled {
+  cursor: not-allowed;
+  opacity: .55;
+}
+.challenge-comparison {
+  padding: 20px 0 0;
+  background: linear-gradient(180deg, rgba(22,163,74,.07), var(--surface));
+  border-color: rgba(22,163,74,.25);
+}
+.comparison-heading { padding: 0 20px 18px; }
+.challenge-link { border-color: rgba(250,204,21,.25); }
 @media (max-width: 1050px) {
   .sidebar {
     transform: translateX(-100%);
@@ -622,4 +700,14 @@ footer {
   .stats-grid {
     grid-template-columns: 1fr 1fr;
   }
+}
+
+@media (max-width: 800px) {
+  .challenge-files,
+  .student-editors {
+    grid-template-columns: 1fr;
+  }
+  .challenge-file .code-window { height: auto; }
+  .challenge-file pre { height: auto; max-height: 360px; }
+  .challenge-submit { align-items: flex-start; flex-direction: column; }
 }

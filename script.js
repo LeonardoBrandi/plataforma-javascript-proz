@@ -873,6 +873,128 @@ while (saldo > 0) {
   }
 ];
 
+const desafio1 = {
+  titulo: "1° Desafio — Cartão de humor interativo",
+  descricao: "Crie uma página que muda de aparência e mensagem quando o usuário clica em um botão.",
+  passos: [
+    "Crie uma pasta no computador e abra-a no VS Code.",
+    "Crie os arquivos index.html, style.css e script.js.",
+    "Copie os códigos iniciais abaixo para os arquivos correspondentes.",
+    "Personalize textos, cores, emojis e o comportamento do botão.",
+    "Teste no navegador e cole seus três códigos nos campos para comparar."
+  ],
+  inicial: {
+    html: `<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu humor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="cartao">
+    <span id="emoji">🙂</span>
+    <h1 id="titulo">Como está seu dia?</h1>
+    <p id="mensagem">Clique no botão para mudar o humor.</p>
+    <button id="mudarHumor">Mudar humor</button>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>`,
+    css: `body {
+  min-height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  font-family: Arial, sans-serif;
+  background: #eef2ff;
+}
+
+.cartao {
+  width: 320px;
+  padding: 32px;
+  text-align: center;
+  border-radius: 20px;
+  background: white;
+  box-shadow: 0 12px 30px #0002;
+}
+
+#emoji { font-size: 64px; }
+button { padding: 12px 18px; cursor: pointer; }`,
+    js: `const botao = document.getElementById("mudarHumor");
+const emoji = document.getElementById("emoji");
+const mensagem = document.getElementById("mensagem");
+
+botao.addEventListener("click", () => {
+  // Altere o emoji, a mensagem e uma cor da página.
+});`
+  },
+  solucao: {
+    html: `<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu humor criativo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="cartao">
+    <span id="emoji">🙂</span>
+    <h1>Meu humor de hoje</h1>
+    <p id="mensagem">Clique para descobrir!</p>
+    <button id="mudarHumor">Mudar humor</button>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>`,
+    css: `body {
+  min-height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  font-family: Arial, sans-serif;
+  background: #eef2ff;
+  transition: background 0.4s;
+}
+.cartao {
+  width: 320px;
+  padding: 32px;
+  text-align: center;
+  border-radius: 20px;
+  background: white;
+  box-shadow: 0 12px 30px #0002;
+}
+#emoji { font-size: 64px; }
+button {
+  padding: 12px 18px;
+  border: 0;
+  border-radius: 10px;
+  color: white;
+  background: #635bff;
+  cursor: pointer;
+}`,
+    js: `const botao = document.getElementById("mudarHumor");
+const emoji = document.getElementById("emoji");
+const mensagem = document.getElementById("mensagem");
+let alegre = false;
+
+botao.addEventListener("click", () => {
+  alegre = !alegre;
+
+  if (alegre) {
+    emoji.textContent = "😄";
+    mensagem.textContent = "Hoje vai ser um ótimo dia!";
+    document.body.style.background = "#fef3c7";
+  } else {
+    emoji.textContent = "🙂";
+    mensagem.textContent = "Continue criando sua própria versão!";
+    document.body.style.background = "#eef2ff";
+  }
+});`
+  }
+};
 const conteudo = document.getElementById("conteudoAtividades");
 const menuTemas = document.getElementById("menuTemas");
 const estado = JSON.parse(localStorage.getItem("jsAcademyConcluidas") || "{}");
@@ -906,9 +1028,114 @@ function renderMenu() {
       <small>${concluidas}/${tema.atividades.length}</small>
     `;
     menuTemas.appendChild(link);
+
+    if (temaIndex === 7) {
+      const desafioLink = document.createElement("a");
+      desafioLink.className = "topic-link challenge-link";
+      desafioLink.href = "#desafio-1";
+      desafioLink.innerHTML = `<span class="topic-num">★</span><span>1° Desafio</span><small>Projeto</small>`;
+      menuTemas.appendChild(desafioLink);
+    }
   });
 }
 
+function renderDesafio() {
+  const section = document.createElement("section");
+  section.id = "desafio-1";
+  section.className = "topic-section challenge-section";
+  section.innerHTML = `
+    <div class="topic-heading">
+      <div>
+        <span class="eyebrow">Projeto prático • após o módulo 8</span>
+        <h2>${desafio1.titulo}</h2>
+        <p>${desafio1.descricao}</p>
+      </div>
+      <div class="topic-badge challenge-badge">Criatividade</div>
+    </div>
+
+    <article class="activity-card challenge-card">
+      <div class="activity-top">
+        <div class="activity-title-wrap">
+          <span class="activity-index">★</span>
+          <div>
+            <h3>Sua missão</h3>
+            <p>Use os três arquivos juntos para transformar um cartão simples em uma experiência com a sua personalidade.</p>
+          </div>
+        </div>
+        <span class="status-chip">Projeto em sala</span>
+      </div>
+
+      <div class="challenge-steps">
+        <strong>Como desenvolver no VS Code</strong>
+        <ol>${desafio1.passos.map(passo => `<li>${passo}</li>`).join("")}</ol>
+        <p><strong>Ideias criativas:</strong> crie humores diferentes, troque o tema para um personagem, animal, jogo, música ou profissão e faça o botão produzir uma mudança visível.</p>
+      </div>
+
+      <div class="challenge-files">
+        ${["html", "css", "js"].map(tipo => `
+          <div class="challenge-file">
+            <div class="code-window">
+              <div class="code-toolbar"><span class="window-dots"><i></i><i></i><i></i></span><span>${tipo === "js" ? "script.js" : tipo === "css" ? "style.css" : "index.html"}</span></div>
+              <pre><code id="inicio-${tipo}">${escaparHtml(desafio1.inicial[tipo])}</code></pre>
+            </div>
+            <button class="action-btn copiar-desafio" data-target="inicio-${tipo}">Copiar ${tipo.toUpperCase()}</button>
+          </div>`).join("")}
+      </div>
+
+      <div class="student-code-area">
+        <div>
+          <span class="eyebrow">Sua criação</span>
+          <h3>Cole aqui os códigos que você produziu</h3>
+          <p>A comparação só será liberada depois que os três campos forem preenchidos.</p>
+        </div>
+        <div class="student-editors">
+          <label>Seu HTML<textarea id="codigoAlunoHtml" data-codigo-aluno="html" spellcheck="false" placeholder="Cole aqui o conteúdo do seu index.html"></textarea></label>
+          <label>Seu CSS<textarea id="codigoAlunoCss" data-codigo-aluno="css" spellcheck="false" placeholder="Cole aqui o conteúdo do seu style.css"></textarea></label>
+          <label>Seu JavaScript<textarea id="codigoAlunoJs" data-codigo-aluno="js" spellcheck="false" placeholder="Cole aqui o conteúdo do seu script.js"></textarea></label>
+        </div>
+        <div class="challenge-submit">
+          <button id="compararDesafio" class="action-btn primary" disabled>Preencha os 3 códigos para comparar</button>
+          <small id="statusDesafio" aria-live="polite">0 de 3 códigos preenchidos</small>
+        </div>
+      </div>
+
+      <div id="solucaoDesafio" class="challenge-comparison hidden">
+        <div class="comparison-heading">
+          <span class="eyebrow">Hora de comparar</span>
+          <h3>Uma possibilidade de solução</h3>
+          <p>Seu código não precisa estar igual. Compare as ideias, identifique o que fez diferente e continue personalizando.</p>
+        </div>
+        <div class="challenge-files">
+          ${["html", "css", "js"].map(tipo => `
+            <div class="challenge-file">
+              <div class="code-window">
+                <div class="code-toolbar"><span class="window-dots"><i></i><i></i><i></i></span><span>Solução • ${tipo.toUpperCase()}</span></div>
+                <pre><code id="solucao-${tipo}">${escaparHtml(desafio1.solucao[tipo])}</code></pre>
+              </div>
+              <button class="action-btn copiar-desafio" data-target="solucao-${tipo}">Copiar referência</button>
+            </div>`).join("")}
+        </div>
+      </div>
+    </article>`;
+
+  ["html", "css", "js"].forEach(tipo => {
+    const campo = section.querySelector(`[data-codigo-aluno="${tipo}"]`);
+    campo.value = localStorage.getItem(`desafio1-${tipo}`) || "";
+  });
+
+  return section;
+}
+
+function atualizarEstadoDesafio() {
+  const campos = [...document.querySelectorAll("[data-codigo-aluno]")];
+  if (!campos.length) return;
+  const preenchidos = campos.filter(campo => campo.value.trim().length > 0).length;
+  const botao = document.getElementById("compararDesafio");
+  const status = document.getElementById("statusDesafio");
+  botao.disabled = preenchidos !== 3;
+  botao.textContent = preenchidos === 3 ? "Comparar com uma solução" : "Preencha os 3 códigos para comparar";
+  status.textContent = `${preenchidos} de 3 códigos preenchidos`;
+}
 function renderConteudo() {
   conteudo.innerHTML = "";
 
@@ -994,10 +1221,15 @@ function renderConteudo() {
     });
 
     conteudo.appendChild(section);
+
+    if (temaIndex === 7) {
+      conteudo.appendChild(renderDesafio());
+    }
   });
 
   atualizarProgresso();
   renderMenu();
+  atualizarEstadoDesafio();
 }
 
 function atualizarProgresso() {
@@ -1045,6 +1277,19 @@ document.addEventListener("click", (event) => {
     document.getElementById("sidebar").classList.remove("open");
   }
 
+  if (event.target.classList.contains("copiar-desafio")) {
+    const alvo = document.getElementById(event.target.dataset.target);
+    copiar(alvo.innerText, event.target);
+    return;
+  }
+
+  if (event.target.id === "compararDesafio") {
+    if (event.target.disabled) return;
+    document.getElementById("solucaoDesafio").classList.remove("hidden");
+    event.target.textContent = "Comparação liberada ✓";
+    document.getElementById("solucaoDesafio").scrollIntoView({ block: "start" });
+    return;
+  }
   if (!card) return;
 
   if (event.target.classList.contains("copiar-codigo")) {
@@ -1079,6 +1324,11 @@ document.addEventListener("click", (event) => {
   }
 });
 
+document.addEventListener("input", (event) => {
+  if (!event.target.matches("[data-codigo-aluno]")) return;
+  localStorage.setItem(`desafio1-${event.target.dataset.codigoAluno}`, event.target.value);
+  atualizarEstadoDesafio();
+});
 if (localStorage.getItem("jsAcademyTema") === "dark") {
   document.body.classList.add("dark");
 }
