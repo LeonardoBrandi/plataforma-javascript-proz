@@ -93,6 +93,6 @@ A plataforma será atualizada conforme o avanço das aulas, recebendo novos exer
 
 ---
 
-**Projeto educacional – Desenvolvimento de Sistemas | Proz**
+**Projeto educacional – Desenvolvimento de Sistemas | Leonardo Brandi | Tutor da Proz**
 
 Desenvolvido como material de apoio para as aulas de JavaScript.
