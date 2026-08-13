@@ -693,6 +693,183 @@ let operacao = "*";
 }`
       }
     ]
+  },
+  {
+    id: "for",
+    titulo: "9. Laço de repetição — for",
+    descricao: "Repetição com início, condição e incremento definidos.",
+    atividades: [
+      { titulo: "Atividade 41 — Contagem de 1 a 5", enunciado: "Use for para mostrar no console os números de 1 até 5.", codigo: `for (let numero = 1; numero <= ___; numero++) {
+  console.log(numero);
+}`, dica: "A repetição deve continuar enquanto numero for menor ou igual a 5.", solucao: `for (let numero = 1; numero <= 5; numero++) {
+  console.log(numero);
+}` },
+      { titulo: "Atividade 42 — Contagem regressiva", enunciado: "Mostre uma contagem regressiva de 5 até 1.", codigo: `for (let numero = 5; numero >= 1; ______) {
+  console.log(numero);
+}`, dica: "Use numero-- para diminuir o valor a cada repetição.", solucao: `for (let numero = 5; numero >= 1; numero--) {
+  console.log(numero);
+}` },
+      { titulo: "Atividade 43 — Números pares", enunciado: "Mostre os números pares de 2 até 10.", codigo: `// Crie o laço for abaixo`, dica: "Comece em 2 e aumente de 2 em 2 usando numero += 2.", solucao: `for (let numero = 2; numero <= 10; numero += 2) {
+  console.log(numero);
+}` },
+      { titulo: "Atividade 44 — Tabuada do 3", enunciado: "Calcule e mostre a tabuada do número 3, de 1 até 10.", codigo: `let numero = 3;
+
+for (let contador = 1; contador <= 10; contador++) {
+  // Mostre a multiplicação
+}`, dica: "Multiplique numero por contador dentro do laço.", solucao: `let numero = 3;
+
+for (let contador = 1; contador <= 10; contador++) {
+  console.log(numero + " x " + contador + " = " + numero * contador);
+}` },
+      { titulo: "Atividade 45 — Soma de 1 a 5", enunciado: "Some os números de 1 até 5 e mostre o resultado final.", codigo: `let soma = 0;
+
+for (let numero = 1; numero <= 5; numero++) {
+  // Acumule o valor em soma
+}
+
+console.log("Total:", soma);`, dica: "Dentro do laço, use soma += numero.", solucao: `let soma = 0;
+
+for (let numero = 1; numero <= 5; numero++) {
+  soma += numero;
+}
+
+console.log("Total:", soma);` }
+    ]
+  },
+  {
+    id: "while",
+    titulo: "10. Laço de repetição — while",
+    descricao: "Repetição enquanto uma condição permanecer verdadeira.",
+    atividades: [
+      { titulo: "Atividade 46 — Contagem com while", enunciado: "Use while para mostrar os números de 1 até 5.", codigo: `let numero = 1;
+
+while (numero <= 5) {
+  console.log(numero);
+  // Atualize numero
+}`, dica: "Use numero++ para evitar um laço infinito.", solucao: `let numero = 1;
+
+while (numero <= 5) {
+  console.log(numero);
+  numero++;
+}` },
+      { titulo: "Atividade 47 — Contagem regressiva com while", enunciado: "Mostre os números de 5 até 1 usando while.", codigo: `let numero = 5;
+
+while (________) {
+  console.log(numero);
+  numero--;
+}`, dica: "A condição deve ser verdadeira enquanto numero for maior ou igual a 1.", solucao: `let numero = 5;
+
+while (numero >= 1) {
+  console.log(numero);
+  numero--;
+}` },
+      { titulo: "Atividade 48 — Economizando moedas", enunciado: "Adicione 10 moedas por repetição até alcançar 50 moedas.", codigo: `let moedas = 0;
+
+while (moedas < 50) {
+  // Adicione 10 moedas
+  console.log("Moedas:", moedas);
+}`, dica: "Atualize moedas com moedas += 10 antes do console.log.", solucao: `let moedas = 0;
+
+while (moedas < 50) {
+  moedas += 10;
+  console.log("Moedas:", moedas);
+}` },
+      { titulo: "Atividade 49 — Dobrar até 32", enunciado: "Comece com o valor 1 e dobre-o até chegar a 32.", codigo: `let valor = 1;
+
+while (valor <= 32) {
+  console.log(valor);
+  // Dobre o valor
+}`, dica: "Use valor *= 2 dentro do laço.", solucao: `let valor = 1;
+
+while (valor <= 32) {
+  console.log(valor);
+  valor *= 2;
+}` },
+      { titulo: "Atividade 50 — Estoque de produtos", enunciado: "Simule a venda de uma unidade por vez até o estoque chegar a zero.", codigo: `let estoque = 4;
+
+while (estoque > 0) {
+  console.log("Venda realizada");
+  // Diminua o estoque
+}
+
+console.log("Estoque esgotado");`, dica: "Use estoque-- em cada repetição.", solucao: `let estoque = 4;
+
+while (estoque > 0) {
+  console.log("Venda realizada");
+  estoque--;
+}
+
+console.log("Estoque esgotado");` }
+    ]
+  },
+  {
+    id: "break",
+    titulo: "11. Interrompendo laços — break",
+    descricao: "Encerramento antecipado de uma repetição ao encontrar uma condição.",
+    atividades: [
+      { titulo: "Atividade 51 — Parar no número 5", enunciado: "Conte de 1 a 10, mas interrompa o laço quando o número for 5.", codigo: `for (let numero = 1; numero <= 10; numero++) {
+  if (numero === 5) {
+    // Interrompa o laço
+  }
+  console.log(numero);
+}`, dica: "Use break dentro do bloco if.", solucao: `for (let numero = 1; numero <= 10; numero++) {
+  if (numero === 5) break;
+  console.log(numero);
+}` },
+      { titulo: "Atividade 52 — Encontrar um nome", enunciado: "Procure o nome Ana na lista e pare a busca quando encontrá-lo.", codigo: `let nomes = ["João", "Maria", "Ana", "Pedro"];
+
+for (let i = 0; i < nomes.length; i++) {
+  console.log("Verificando:", nomes[i]);
+  if (nomes[i] === "Ana") {
+    // Mostre uma mensagem e pare
+  }
+}`, dica: "Depois da mensagem, use break para não verificar os nomes seguintes.", solucao: `for (let i = 0; i < nomes.length; i++) {
+  console.log("Verificando:", nomes[i]);
+  if (nomes[i] === "Ana") {
+    console.log("Ana foi encontrada!");
+    break;
+  }
+}` },
+      { titulo: "Atividade 53 — Limite de tentativas", enunciado: "Interrompa as tentativas quando a senha correta for encontrada.", codigo: `let tentativas = ["123", "abc", "js2026", "senha"];
+let senhaCorreta = "js2026";
+
+for (let i = 0; i < tentativas.length; i++) {
+  if (tentativas[i] === senhaCorreta) {
+    console.log("Acesso liberado");
+    // Pare as tentativas
+  }
+}`, dica: "Use break logo depois de liberar o acesso.", solucao: `for (let i = 0; i < tentativas.length; i++) {
+  if (tentativas[i] === senhaCorreta) {
+    console.log("Acesso liberado");
+    break;
+  }
+}` },
+      { titulo: "Atividade 54 — Primeiro múltiplo de 7", enunciado: "Encontre o primeiro número entre 10 e 30 que seja múltiplo de 7 e pare o laço.", codigo: `for (let numero = 10; numero <= 30; numero++) {
+  if (numero % 7 === 0) {
+    // Mostre o número e interrompa
+  }
+}`, dica: "O operador % retorna o resto da divisão.", solucao: `for (let numero = 10; numero <= 30; numero++) {
+  if (numero % 7 === 0) {
+    console.log("Primeiro múltiplo:", numero);
+    break;
+  }
+}` },
+      { titulo: "Atividade 55 — Saque com limite", enunciado: "Retire R$20 por vez e pare antes que o saldo fique menor que R$40.", codigo: `let saldo = 100;
+
+while (saldo > 0) {
+  if (saldo <= 40) {
+    // Interrompa o saque
+  }
+  saldo -= 20;
+  console.log("Saldo:", saldo);
+}`, dica: "Use break dentro do if para sair do while.", solucao: `let saldo = 100;
+
+while (saldo > 0) {
+  if (saldo <= 40) break;
+  saldo -= 20;
+  console.log("Saldo:", saldo);
+}` }
+    ]
   }
 ];
 
