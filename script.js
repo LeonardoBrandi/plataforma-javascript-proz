@@ -1375,6 +1375,125 @@ botao.addEventListener("click", () => {
 });`
   }
 };
+const desafio2 = {
+  titulo: "2° Desafio — Painel de estudos interativo",
+  descricao: "Construa um projeto único em 13 etapas, misturando os conceitos de todos os módulos.",
+  produto: "Um painel que apresenta o aluno, organiza tarefas, calcula progresso, classifica o nível de estudo e reage aos cliques do usuário.",
+  arquivos: {
+    html: `<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu Painel de Estudos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="painel">
+    <h1 id="saudacao">Meu Painel de Estudos</h1>
+    <p id="nivel">Nível: começando</p>
+    <div id="listaTarefas"></div>
+    <button id="adicionarTarefa">Adicionar tarefa</button>
+    <button id="concluirTarefa">Concluir próxima</button>
+    <p id="progresso">Progresso: 0%</p>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>`,
+    css: `body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: Arial, sans-serif;
+  background: #eef2ff;
+}
+.painel {
+  width: min(520px, 86%);
+  padding: 28px;
+  border-radius: 20px;
+  background: white;
+  box-shadow: 0 16px 40px #0002;
+}
+.tarefa {
+  margin: 8px 0;
+  padding: 12px;
+  border-radius: 10px;
+  background: #f8fafc;
+}
+.concluida { text-decoration: line-through; color: #16a34a; }
+button { margin: 6px 4px 0 0; padding: 10px 14px; cursor: pointer; }`,
+    js: `// Desenvolva o projeto seguindo as 13 etapas abaixo.
+const aluno = {
+  nome: "Seu nome",
+  pontos: 0,
+  tema: "claro"
+};
+
+let tarefas = [];
+let concluidas = 0;
+
+function renderizarPainel() {
+  // Mostre os dados e as tarefas no HTML.
+}`
+  },
+  etapas: [
+    { modulo: "Módulo 1", titulo: "Crie o perfil do estudante", conceitos: "String, Number, Boolean e typeof", missao: "Crie variáveis para nome, idade, curso, meta semanal e status de matrícula. Mostre os valores e seus tipos no console.", sugestao: "Personalize o painel com seus próprios dados ou invente um personagem estudante.", codigo: `let nome = "Ana";
+let idade = 18;
+let metaSemanal = 5;
+let matriculado = true;
+console.log(nome, typeof nome);` },
+    { modulo: "Módulo 2", titulo: "Atualize pontos e metas", conceitos: "Atribuição, let, const e operadores de atribuição", missao: "Comece com zero pontos. Some 10 pontos quando uma tarefa for concluída e permita alterar a meta semanal.", sugestao: "Crie bônus diferentes para tarefas fáceis e difíceis.", codigo: `let pontos = 0;
+pontos += 10;
+let metaSemanal = 5;
+metaSemanal = 7;` },
+    { modulo: "Módulo 3", titulo: "Organize os dados em um objeto", conceitos: "Objeto e notação de ponto", missao: "Reúna nome, pontos, meta e tema em um objeto aluno. Depois altere uma propriedade pela notação de ponto.", sugestao: "Acrescente avatar, turma ou matéria favorita.", codigo: `const aluno = { nome: "Ana", pontos: 10, meta: 5 };
+aluno.tema = "claro";` },
+    { modulo: "Módulo 4", titulo: "Padronize textos", conceitos: "trim, toUpperCase, includes e length", missao: "Remova espaços do nome, mostre-o em maiúsculas e verifique se uma tarefa contém a palavra JavaScript.", sugestao: "Mostre também a quantidade de caracteres do nome da tarefa.", codigo: `let nomeLimpo = aluno.nome.trim();
+console.log(nomeLimpo.toUpperCase());
+console.log("Estudar JavaScript".includes("JavaScript"));` },
+    { modulo: "Módulo 5", titulo: "Calcule o progresso", conceitos: "Operadores aritméticos e comparação", missao: "Calcule a porcentagem de tarefas concluídas e verifique se o aluno atingiu pelo menos 70%.", sugestao: "Evite a divisão quando ainda não houver tarefas.", codigo: `let percentual = (concluidas / tarefas.length) * 100;
+let metaAtingida = percentual >= 70;` },
+    { modulo: "Módulo 6", titulo: "Crie mensagens com if", conceitos: "if e operadores lógicos", missao: "Se houver tarefas e a primeira estiver concluída, mostre uma mensagem de incentivo.", sugestao: "Combine duas condições usando &&.", codigo: `if (tarefas.length > 0 && tarefas[0].concluida) {
+  console.log("Você começou muito bem!");
+}` },
+    { modulo: "Módulo 7", titulo: "Classifique o nível", conceitos: "if, else if e else", missao: "Classifique o aluno como Iniciante, Em evolução ou Mestre conforme seus pontos.", sugestao: "Escolha seus próprios limites e explique a regra na tela.", codigo: `if (pontos >= 100) nivel = "Mestre";
+else if (pontos >= 50) nivel = "Em evolução";
+else nivel = "Iniciante";` },
+    { modulo: "Módulo 8", titulo: "Escolha o tema visual", conceitos: "switch, case, break e default", missao: "Use switch para escolher as cores do painel conforme o tema claro, escuro ou colorido.", sugestao: "Adicione um quarto tema com as cores da sua turma.", codigo: `switch (aluno.tema) {
+  case "escuro": document.body.style.background = "#111827"; break;
+  case "colorido": document.body.style.background = "#fde68a"; break;
+  default: document.body.style.background = "#eef2ff";
+}` },
+    { modulo: "Módulo 9", titulo: "Gere uma sequência de metas", conceitos: "Laço for", missao: "Use for para mostrar no console os dias de estudo de 1 até a meta semanal.", sugestao: "Transforme cada dia em uma pequena mensagem motivacional.", codigo: `for (let dia = 1; dia <= aluno.meta; dia++) {
+  console.log("Dia de estudo " + dia);
+}` },
+    { modulo: "Módulo 10", titulo: "Simule sessões de estudo", conceitos: "Laço while", missao: "Comece com zero minutos e some 15 enquanto o tempo for menor que uma meta de 60 minutos.", sugestao: "Mostre uma mensagem a cada intervalo concluído.", codigo: `let minutos = 0;
+while (minutos < 60) {
+  minutos += 15;
+  console.log(minutos + " minutos estudados");
+}` },
+    { modulo: "Módulo 11", titulo: "Encontre a primeira pendência", conceitos: "break dentro de laços", missao: "Percorra as tarefas e pare quando encontrar a primeira que ainda não foi concluída.", sugestao: "Mostre o nome da pendência encontrada.", codigo: `for (let i = 0; i < tarefas.length; i++) {
+  if (!tarefas[i].concluida) {
+    console.log("Próxima:", tarefas[i].titulo);
+    break;
+  }
+}` },
+    { modulo: "Módulo 12", titulo: "Gerencie a lista de tarefas", conceitos: "Arrays, push, pop, unshift, indexOf, splice e forEach", missao: "Adicione tarefas, retire a última, insira uma prioridade no início, procure uma tarefa e renderize todas com forEach.", sugestao: "Use objetos dentro do array para guardar título e status.", codigo: `tarefas.push({ titulo: "Estudar arrays", concluida: false });
+tarefas.unshift({ titulo: "Revisar hoje", concluida: false });
+tarefas.forEach((tarefa) => console.log(tarefa.titulo));` },
+    { modulo: "Módulo 13", titulo: "Torne o painel interativo", conceitos: "Funções, objetos, DOM e eventos", missao: "Crie funções para renderizar, adicionar e concluir tarefas. Conecte-as aos botões com eventos de clique e atualize o DOM.", sugestao: "Inclua um campo de texto para o usuário escrever novas tarefas.", codigo: `function renderizarPainel() {
+  listaTarefas.innerHTML = "";
+  tarefas.forEach((tarefa) => {
+    listaTarefas.innerHTML += "<div class=\"tarefa\">" + tarefa.titulo + "</div>";
+  });
+}
+
+document.getElementById("adicionarTarefa").addEventListener("click", adicionarTarefa);` }
+  ]
+};
+
+const estadoDesafio2 = JSON.parse(localStorage.getItem("jsAcademyDesafio2") || "{}");
 const conteudo = document.getElementById("conteudoAtividades");
 const menuTemas = document.getElementById("menuTemas");
 const estado = JSON.parse(localStorage.getItem("jsAcademyConcluidas") || "{}");
@@ -1415,6 +1534,13 @@ function renderMenu() {
       desafioLink.href = "#desafio-1";
       desafioLink.innerHTML = `<span class="topic-num">★</span><span>1° Desafio</span><small>Projeto</small>`;
       menuTemas.appendChild(desafioLink);
+    }
+    if (temaIndex === temas.length - 1) {
+      const desafio2Link = document.createElement("a");
+      desafio2Link.className = "topic-link challenge-link";
+      desafio2Link.href = "#desafio-2";
+      desafio2Link.innerHTML = `<span class="topic-num">2</span><span>2° Desafio</span><small>Integrador</small>`;
+      menuTemas.appendChild(desafio2Link);
     }
   });
 }
@@ -1515,6 +1641,102 @@ function atualizarEstadoDesafio() {
   botao.disabled = preenchidos !== 3;
   botao.textContent = preenchidos === 3 ? "Comparar com uma solução" : "Preencha os 3 códigos para comparar";
   status.textContent = `${preenchidos} de 3 códigos preenchidos`;
+}
+function renderDesafio2() {
+  const section = document.createElement("section");
+  section.id = "desafio-2";
+  section.className = "topic-section challenge-section challenge-two-section";
+  const concluidas = desafio2.etapas.filter((_, indice) => estadoDesafio2[indice]).length;
+
+  section.innerHTML = `
+    <div class="topic-heading">
+      <div>
+        <span class="eyebrow">Projeto integrador • todos os módulos</span>
+        <h2>${desafio2.titulo}</h2>
+        <p>${desafio2.descricao}</p>
+      </div>
+      <div class="topic-badge challenge-badge" id="progressoDesafio2">${concluidas} / ${desafio2.etapas.length}</div>
+    </div>
+
+    <article class="activity-card challenge-card challenge-two-intro">
+      <div class="activity-top">
+        <div class="activity-title-wrap">
+          <span class="activity-index">2</span>
+          <div>
+            <h3>Projeto: Painel de estudos interativo</h3>
+            <p>${desafio2.produto}</p>
+          </div>
+        </div>
+        <span class="status-chip">13 etapas</span>
+      </div>
+      <div class="challenge-steps">
+        <strong>Como trabalhar</strong>
+        <ol>
+          <li>Crie uma nova pasta no VS Code com index.html, style.css e script.js.</li>
+          <li>Copie os códigos iniciais e execute o projeto no navegador.</li>
+          <li>Desenvolva uma etapa por vez, testando antes de avançar.</li>
+          <li>Marque cada etapa concluída e personalize o projeto com suas ideias.</li>
+        </ol>
+      </div>
+      <div class="challenge-files">
+        ${["html", "css", "js"].map(tipo => `
+          <div class="challenge-file">
+            <div class="code-window">
+              <div class="code-toolbar"><span class="window-dots"><i></i><i></i><i></i></span><span>${tipo === "js" ? "script.js" : tipo === "css" ? "style.css" : "index.html"}</span></div>
+              <pre><code id="desafio2-${tipo}">${escaparHtml(desafio2.arquivos[tipo])}</code></pre>
+            </div>
+            <button class="action-btn copiar-desafio" data-target="desafio2-${tipo}">Copiar ${tipo.toUpperCase()}</button>
+          </div>`).join("")}
+      </div>
+    </article>
+
+    <div class="challenge-two-grid">
+      ${desafio2.etapas.map((etapa, indice) => {
+        const concluida = !!estadoDesafio2[indice];
+        return `
+          <article class="activity-card challenge-module-step${concluida ? " completed" : ""}" data-step="${indice}">
+            <div class="activity-top">
+              <div class="activity-title-wrap">
+                <span class="activity-index">${indice + 1}</span>
+                <div>
+                  <span class="eyebrow">${etapa.modulo}</span>
+                  <h3>${etapa.titulo}</h3>
+                  <p><strong>Conceitos:</strong> ${etapa.conceitos}</p>
+                </div>
+              </div>
+              <span class="status-chip">${concluida ? "Concluída" : "Em construção"}</span>
+            </div>
+            <div class="challenge-mission">
+              <strong>Missão</strong>
+              <p>${etapa.missao}</p>
+              <div class="creative-suggestion"><strong>Sugestão criativa</strong><p>${etapa.sugestao}</p></div>
+            </div>
+            <div class="code-window">
+              <div class="code-toolbar"><span class="window-dots"><i></i><i></i><i></i></span><span>Ponto de partida</span></div>
+              <pre><code>${escaparHtml(etapa.codigo)}</code></pre>
+            </div>
+            <div class="activity-actions">
+              <button class="action-btn copiar-etapa-desafio2">Copiar código</button>
+              <button class="action-btn primary concluir-etapa-desafio2">${concluida ? "Etapa concluída ✓" : "Marcar etapa como concluída"}</button>
+            </div>
+          </article>`;
+      }).join("")}
+    </div>
+
+    <div class="challenge-finish${concluidas === desafio2.etapas.length ? "" : " hidden"}" id="conclusaoDesafio2">
+      <span>🏆</span>
+      <div><strong>Projeto integrador concluído!</strong><p>Agora apresente sua versão para a turma e explique qual personalização representa melhor sua criatividade.</p></div>
+    </div>`;
+
+  return section;
+}
+
+function atualizarProgressoDesafio2() {
+  const section = document.getElementById("desafio-2");
+  if (!section) return;
+  const concluidas = desafio2.etapas.filter((_, indice) => estadoDesafio2[indice]).length;
+  document.getElementById("progressoDesafio2").textContent = `${concluidas} / ${desafio2.etapas.length}`;
+  document.getElementById("conclusaoDesafio2").classList.toggle("hidden", concluidas !== desafio2.etapas.length);
 }
 function renderConteudo() {
   conteudo.innerHTML = "";
@@ -1632,11 +1854,15 @@ function renderConteudo() {
     if (temaIndex === 7) {
       conteudo.appendChild(renderDesafio());
     }
+    if (temaIndex === temas.length - 1) {
+      conteudo.appendChild(renderDesafio2());
+    }
   });
 
   atualizarProgresso();
   renderMenu();
   atualizarEstadoDesafio();
+  atualizarProgressoDesafio2();
 }
 
 function atualizarProgresso() {
@@ -1697,6 +1923,24 @@ document.addEventListener("click", (event) => {
     document.getElementById("solucaoDesafio").scrollIntoView({ block: "start" });
     return;
   }
+
+  if (event.target.classList.contains("copiar-etapa-desafio2")) {
+    const etapa = event.target.closest(".challenge-module-step");
+    copiar(etapa.querySelector(".code-window code").innerText, event.target);
+    return;
+  }
+
+  if (event.target.classList.contains("concluir-etapa-desafio2")) {
+    const etapa = event.target.closest(".challenge-module-step");
+    const indice = Number(etapa.dataset.step);
+    estadoDesafio2[indice] = !estadoDesafio2[indice];
+    localStorage.setItem("jsAcademyDesafio2", JSON.stringify(estadoDesafio2));
+    etapa.classList.toggle("completed", estadoDesafio2[indice]);
+    etapa.querySelector(".status-chip").textContent = estadoDesafio2[indice] ? "Concluída" : "Em construção";
+    event.target.textContent = estadoDesafio2[indice] ? "Etapa concluída ✓" : "Marcar etapa como concluída";
+    atualizarProgressoDesafio2();
+    return;
+  }
   if (!card) return;
 
   if (event.target.classList.contains("copiar-codigo")) {
@@ -1741,6 +1985,7 @@ document.addEventListener("input", (event) => {
   if (!event.target.matches("[data-codigo-aluno]")) return;
   localStorage.setItem(`desafio1-${event.target.dataset.codigoAluno}`, event.target.value);
   atualizarEstadoDesafio();
+  atualizarProgressoDesafio2();
 });
 if (localStorage.getItem("jsAcademyTema") === "dark") {
   document.body.classList.add("dark");
