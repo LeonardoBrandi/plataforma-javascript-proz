@@ -870,6 +870,290 @@ while (saldo > 0) {
   console.log("Saldo:", saldo);
 }` }
     ]
+  },
+  {
+    id: "arrays",
+    titulo: "12. Arrays — Tema 06",
+    descricao: "Criação, propriedades, métodos e repetição em listas e matrizes.",
+    atividades: [
+      { titulo: "Atividade 56 — Array vazio", enunciado: "Crie um array vazio chamado frutas e depois insira três frutas atribuindo valores às posições 0, 1 e 2.", codigo: `let frutas = [];
+
+frutas[0] = "Maçã";
+// Complete as posições 1 e 2
+
+console.log(frutas);`, dica: "Use frutas[1] e frutas[2] para guardar os próximos valores.", solucao: `let frutas = [];
+frutas[0] = "Maçã";
+frutas[1] = "Banana";
+frutas[2] = "Uva";
+console.log(frutas);` },
+      { titulo: "Atividade 57 — Array com elementos", enunciado: "Crie diretamente um array com quatro nomes de alunos e mostre a lista.", codigo: `let alunos = [
+  // Escreva quatro nomes entre aspas
+];
+
+console.log(alunos);`, dica: "Separe os textos por vírgulas dentro dos colchetes.", solucao: `let alunos = ["Ana", "Bruno", "Carlos", "Duda"];
+console.log(alunos);` },
+      { titulo: "Atividade 58 — Quantidade de elementos", enunciado: "Use length para descobrir quantas cores existem no array.", codigo: `let cores = ["azul", "verde", "amarelo", "roxo"];
+
+console.log("Quantidade:", ______);`, dica: "A propriedade é acessada com cores.length e não usa parênteses.", solucao: `console.log("Quantidade:", cores.length);` },
+      { titulo: "Atividade 59 — Último elemento com length", enunciado: "Mostre o último item da lista sem escrever diretamente seu índice.", codigo: `let tarefas = ["Estudar", "Praticar", "Revisar"];
+
+let ultima = tarefas[________];
+console.log(ultima);`, dica: "O último índice é sempre length - 1.", solucao: `let ultima = tarefas[tarefas.length - 1];
+console.log(ultima);` },
+      { titulo: "Atividade 60 — Primeiro forEach", enunciado: "Percorra o array e mostre cada linguagem no console usando a sintaxe do forEach.", codigo: `let linguagens = ["HTML", "CSS", "JavaScript"];
+
+linguagens.forEach(function(linguagem) {
+  // Mostre linguagem
+});`, dica: "O parâmetro linguagem representa um elemento em cada repetição.", solucao: `linguagens.forEach(function(linguagem) {
+  console.log(linguagem);
+});` },
+      { titulo: "Atividade 61 — forEach com posição", enunciado: "Mostre cada produto acompanhado de sua posição no array.", codigo: `let produtos = ["Mouse", "Teclado", "Monitor"];
+
+produtos.forEach((produto, indice) => {
+  // Mostre indice e produto
+});`, dica: "O segundo parâmetro recebido pelo forEach é o índice.", solucao: `produtos.forEach((produto, indice) => {
+  console.log(indice + ": " + produto);
+});` },
+      { titulo: "Atividade 62 — Adicionar com push", enunciado: "Adicione JavaScript ao final do array de tecnologias.", codigo: `let tecnologias = ["HTML", "CSS"];
+
+tecnologias.________("JavaScript");
+console.log(tecnologias);`, dica: "push adiciona um elemento ao final do array.", solucao: `tecnologias.push("JavaScript");
+console.log(tecnologias);` },
+      { titulo: "Atividade 63 — Vários valores com push", enunciado: "Adicione dois números ao final do array em uma única chamada de push.", codigo: `let numeros = [1, 2, 3];
+
+// Adicione 4 e 5
+console.log(numeros);`, dica: "push pode receber mais de um argumento separado por vírgula.", solucao: `numeros.push(4, 5);
+console.log(numeros);` },
+      { titulo: "Atividade 64 — Remover com pop", enunciado: "Remova o último item do carrinho e mostre o array atualizado.", codigo: `let carrinho = ["Caderno", "Caneta", "Borracha"];
+
+carrinho.________();
+console.log(carrinho);`, dica: "pop remove o último elemento e não precisa de argumento.", solucao: `carrinho.pop();
+console.log(carrinho);` },
+      { titulo: "Atividade 65 — Guardar o valor removido", enunciado: "Remova o último participante e guarde seu nome em uma variável.", codigo: `let participantes = ["Bia", "Leo", "Rafa"];
+
+let removido = ________;
+console.log("Saiu:", removido);`, dica: "O método pop retorna o elemento que foi removido.", solucao: `let removido = participantes.pop();
+console.log("Saiu:", removido);
+console.log(participantes);` },
+      { titulo: "Atividade 66 — Adicionar no início", enunciado: "Use unshift para adicionar segunda-feira no começo do array.", codigo: `let dias = ["terça-feira", "quarta-feira"];
+
+// Adicione no início
+console.log(dias);`, dica: "unshift funciona como push, mas adiciona no começo.", solucao: `dias.unshift("segunda-feira");
+console.log(dias);` },
+      { titulo: "Atividade 67 — Prioridades com unshift", enunciado: "Adicione duas tarefas urgentes no início da lista em uma chamada.", codigo: `let tarefas = ["Ler apostila"];
+
+// Adicione "Enviar trabalho" e "Estudar prova"
+console.log(tarefas);`, dica: "Passe os dois textos para unshift separados por vírgula.", solucao: `tarefas.unshift("Enviar trabalho", "Estudar prova");
+console.log(tarefas);` },
+      { titulo: "Atividade 68 — Localizar com indexOf", enunciado: "Descubra a posição da palavra JavaScript no array.", codigo: `let cursos = ["HTML", "CSS", "JavaScript", "Python"];
+
+let posicao = cursos.________("JavaScript");
+console.log(posicao);`, dica: "indexOf retorna o índice da primeira ocorrência encontrada.", solucao: `let posicao = cursos.indexOf("JavaScript");
+console.log(posicao); // 2` },
+      { titulo: "Atividade 69 — Verificar se existe", enunciado: "Use indexOf para informar se o nome Paulo está ou não na lista.", codigo: `let nomes = ["Ana", "Paulo", "Lia"];
+let posicao = nomes.indexOf("Paulo");
+
+if (posicao !== -1) {
+  // Mostre que foi encontrado
+}`, dica: "Quando não encontra o valor, indexOf retorna -1.", solucao: `if (posicao !== -1) {
+  console.log("Paulo foi encontrado na posição", posicao);
+} else {
+  console.log("Paulo não está na lista");
+}` },
+      { titulo: "Atividade 70 — Remover com splice", enunciado: "Remova o elemento CSS do array usando sua posição.", codigo: `let tecnologias = ["HTML", "CSS", "JavaScript"];
+
+tecnologias.splice(____, ____);
+console.log(tecnologias);`, dica: "CSS está no índice 1 e apenas um elemento deve ser removido.", solucao: `tecnologias.splice(1, 1);
+console.log(tecnologias);` },
+      { titulo: "Atividade 71 — Inserir com splice", enunciado: "Insira CSS entre HTML e JavaScript sem remover nenhum item.", codigo: `let tecnologias = ["HTML", "JavaScript"];
+
+// Insira CSS na posição 1
+console.log(tecnologias);`, dica: "Use splice(1, 0, " + '"CSS"' + ") — zero indica que nada será removido.", solucao: `tecnologias.splice(1, 0, "CSS");
+console.log(tecnologias);` },
+      { titulo: "Atividade 72 — Acessar uma matriz", enunciado: "Acesse o número 5 dentro da matriz usando dois índices.", codigo: `let matriz = [
+  [1, 2, 3],
+  [4, 5, 6]
+];
+
+console.log(matriz[____][____]);`, dica: "Primeiro selecione a segunda linha e depois o segundo elemento.", solucao: `console.log(matriz[1][1]); // 5` },
+      { titulo: "Atividade 73 — Iterar uma matriz", enunciado: "Use dois forEach para percorrer as linhas e mostrar cada valor da matriz.", codigo: `let matriz = [[1, 2], [3, 4]];
+
+matriz.forEach((linha) => {
+  // Percorra os valores da linha
+});`, dica: "Dentro do primeiro forEach, chame linha.forEach.", solucao: `matriz.forEach((linha) => {
+  linha.forEach((valor) => {
+    console.log(valor);
+  });
+});` }
+    ]
+  },
+  {
+    id: "funcoes-dom",
+    titulo: "13. Funções, objetos e DOM — Tema 07",
+    descricao: "Funções, criação de objetos, manipulação da página e eventos principais.",
+    atividades: [
+      { titulo: "Atividade 74 — Criar uma função", enunciado: "Declare uma função chamada apresentar que mostre uma mensagem no console e depois execute-a.", codigo: `function apresentar() {
+  // Mostre uma mensagem
+}
+
+// Chame a função`, dica: "Para executar, escreva apresentar(); depois da declaração.", solucao: `function apresentar() {
+  console.log("Olá! Estou aprendendo funções.");
+}
+
+apresentar();` },
+      { titulo: "Atividade 75 — Parâmetros e retorno", enunciado: "Crie uma função que receba dois números, retorne a soma e mostre o resultado.", codigo: `function somar(numero1, numero2) {
+  // Retorne a soma
+}
+
+let resultado = somar(4, 6);
+console.log(resultado);`, dica: "Use return numero1 + numero2 dentro da função.", solucao: `function somar(numero1, numero2) {
+  return numero1 + numero2;
+}
+
+let resultado = somar(4, 6);
+console.log(resultado);` },
+      { titulo: "Atividade 76 — Função anônima", enunciado: "Complete a função anônima guardada na variável dobro.", codigo: `const dobro = function(numero) {
+  // Retorne o dobro
+};
+
+console.log(dobro(5));`, dica: "Uma função anônima não possui nome depois da palavra function.", solucao: `const dobro = function(numero) {
+  return numero * 2;
+};
+
+console.log(dobro(5));` },
+      { titulo: "Atividade 77 — Função anônima no forEach", enunciado: "Use uma função anônima para mostrar cada nota do array.", codigo: `let notas = [7, 8, 9];
+
+notas.forEach(________(nota) {
+  console.log(nota);
+});`, dica: "Complete o espaço com a palavra function.", solucao: `notas.forEach(function(nota) {
+  console.log(nota);
+});` },
+      { titulo: "Atividade 78 — Primeira arrow function", enunciado: "Transforme a função de saudação em uma arrow function.", codigo: `const saudar = ________ {
+  console.log("Bem-vindo!");
+};
+
+saudar();`, dica: "Sem parâmetros, a sintaxe começa com () =>.", solucao: `const saudar = () => {
+  console.log("Bem-vindo!");
+};
+
+saudar();` },
+      { titulo: "Atividade 79 — Arrow function com parâmetro", enunciado: "Crie uma arrow function que receba um nome e retorne uma saudação.", codigo: `const criarSaudacao = (nome) => {
+  // Retorne "Olá, " junto com o nome
+};
+
+console.log(criarSaudacao("Ana"));`, dica: "Use return dentro das chaves.", solucao: `const criarSaudacao = (nome) => {
+  return "Olá, " + nome;
+};
+
+console.log(criarSaudacao("Ana"));` },
+      { titulo: "Atividade 80 — Propriedade e método", enunciado: "Acesse a propriedade nome e execute o método apresentar do objeto aluno.", codigo: `let aluno = {
+  nome: "Lucas",
+  apresentar: function() {
+    console.log("Sou " + this.nome);
+  }
+};
+
+console.log(aluno.________);
+aluno.________();`, dica: "Propriedade é um valor; método é uma função e precisa de parênteses.", solucao: `console.log(aluno.nome);
+aluno.apresentar();` },
+      { titulo: "Atividade 81 — Criar um método", enunciado: "Acrescente ao objeto um método ligar que altere a propriedade ligado para true.", codigo: `let computador = {
+  marca: "Proz PC",
+  ligado: false,
+  ligar: function() {
+    // Altere ligado usando this
+  }
+};
+
+computador.ligar();`, dica: "Dentro do método, use this.ligado = true.", solucao: `computador.ligar = function() {
+  this.ligado = true;
+};
+
+computador.ligar();
+console.log(computador.ligado);` },
+      { titulo: "Atividade 82 — Criação de objeto", enunciado: "Crie um objeto livro com título, autor e número de páginas.", codigo: `let livro = {
+  // Crie as três propriedades
+};
+
+console.log(livro);`, dica: "Use o formato propriedade: valor e separe por vírgulas.", solucao: `let livro = {
+  titulo: "O Código Criativo",
+  autor: "Ana Silva",
+  paginas: 180
+};
+
+console.log(livro);` },
+      { titulo: "Atividade 83 — Alterar um objeto", enunciado: "Atualize o preço do produto e adicione a propriedade disponivel.", codigo: `let produto = {
+  nome: "Fone",
+  preco: 80
+};
+
+// Altere e adicione propriedades`, dica: "Use produto.preco e produto.disponivel.", solucao: `produto.preco = 70;
+produto.disponivel = true;
+console.log(produto);` },
+      { titulo: "Atividade 84 — Função construtora", enunciado: "Complete a função construtora Aluno para guardar nome e curso.", codigo: `function Aluno(nome, curso) {
+  this.________ = nome;
+  this.________ = curso;
+}
+
+let aluno1 = new Aluno("Bia", "JavaScript");`, dica: "As propriedades podem ter os mesmos nomes dos parâmetros.", solucao: `function Aluno(nome, curso) {
+  this.nome = nome;
+  this.curso = curso;
+}
+
+let aluno1 = new Aluno("Bia", "JavaScript");
+console.log(aluno1);` },
+      { titulo: "Atividade 85 — Vários objetos pelo construtor", enunciado: "Use a função construtora Produto para criar dois produtos diferentes.", codigo: `function Produto(nome, preco) {
+  this.nome = nome;
+  this.preco = preco;
+}
+
+// Crie dois objetos com new`, dica: "Use new Produto(...) e guarde cada objeto em uma variável.", solucao: `let produto1 = new Produto("Mouse", 60);
+let produto2 = new Produto("Teclado", 120);
+console.log(produto1, produto2);` },
+      { titulo: "Atividade 86 — Selecionar pelo DOM", enunciado: "Selecione o título pelo id e mostre o elemento no console.", codigo: `// HTML: <h1 id="titulo">Minha página</h1>
+
+const titulo = document.________("titulo");
+console.log(titulo);`, dica: "Use getElementById para selecionar um id.", solucao: `const titulo = document.getElementById("titulo");
+console.log(titulo);` },
+      { titulo: "Atividade 87 — Selecionar com querySelector", enunciado: "Selecione o primeiro botão da página usando querySelector.", codigo: `// HTML: <button class="acao">Clique</button>
+
+const botao = document.________(".acao");`, dica: "querySelector recebe um seletor CSS, por isso a classe começa com ponto.", solucao: `const botao = document.querySelector(".acao");
+console.log(botao);` },
+      { titulo: "Atividade 88 — Árvore de elementos", enunciado: "A partir da lista, acesse seu elemento pai e seus filhos.", codigo: `// HTML: <section><ul id="lista"><li>Um</li><li>Dois</li></ul></section>
+const lista = document.getElementById("lista");
+
+console.log(lista.________);
+console.log(lista.________);`, dica: "Use parentElement para o pai e children para a coleção de filhos.", solucao: `console.log(lista.parentElement);
+console.log(lista.children);` },
+      { titulo: "Atividade 89 — Navegar no DOM", enunciado: "Mostre o primeiro e o último elemento filho de uma lista.", codigo: `const lista = document.getElementById("lista");
+
+console.log(lista.________);
+console.log(lista.________);`, dica: "Use firstElementChild e lastElementChild.", solucao: `console.log(lista.firstElementChild);
+console.log(lista.lastElementChild);` },
+      { titulo: "Atividade 90 — Alterar conteúdo", enunciado: "Mude o texto do título da página por meio do DOM.", codigo: `// HTML: <h1 id="titulo">Título antigo</h1>
+const titulo = document.getElementById("titulo");
+
+// Altere o texto`, dica: "A propriedade textContent controla o texto do elemento.", solucao: `titulo.textContent = "Título alterado com JavaScript";` },
+      { titulo: "Atividade 91 — Alterar estilo e classe", enunciado: "Troque a cor do título e adicione a classe destaque.", codigo: `const titulo = document.getElementById("titulo");
+
+// Altere a cor e adicione a classe`, dica: "Use titulo.style.color e titulo.classList.add.", solucao: `titulo.style.color = "purple";
+titulo.classList.add("destaque");` },
+      { titulo: "Atividade 92 — Evento de clique", enunciado: "Ao clicar no botão, altere a mensagem exibida no parágrafo.", codigo: `const botao = document.getElementById("botao");
+const mensagem = document.getElementById("mensagem");
+
+botao.addEventListener("________", () => {
+  // Altere a mensagem
+});`, dica: "O nome do evento é click.", solucao: `botao.addEventListener("click", () => {
+  mensagem.textContent = "O botão foi clicado!";
+});` },
+      { titulo: "Atividade 93 — Evento de digitação", enunciado: "Mostre em um parágrafo o texto que o usuário digitar no campo.", codigo: `const campo = document.getElementById("nome");
+const saida = document.getElementById("saida");
+
+campo.addEventListener("input", (evento) => {
+  // Copie o valor para a saída
+});`, dica: "O valor digitado está em evento.target.value.", solucao: `campo.addEventListener("input", (evento) => {
+  saida.textContent = evento.target.value;
+});` }
+    ]
   }
 ];
 
@@ -1155,7 +1439,7 @@ function renderConteudo() {
           <h2>${tema.titulo}</h2>
           <p>${tema.descricao}</p>
         </div>
-        <div class="topic-badge">${concluidasTema} / 5</div>
+        <div class="topic-badge">${concluidasTema} / ${tema.atividades.length}</div>
       </div>
     `;
 
