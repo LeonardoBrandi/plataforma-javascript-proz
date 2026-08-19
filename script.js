@@ -1157,6 +1157,102 @@ campo.addEventListener("input", (evento) => {
   }
 ];
 
+const guiasPorTema = {
+  variaveis: {
+    titulo: "Valores, variáveis e tipos de dados",
+    texto: "Variáveis guardam valores para que o programa possa utilizá-los depois. Em JavaScript, let permite alterar o valor e const protege a referência contra uma nova atribuição. String representa textos, Number representa números e Boolean representa verdadeiro ou falso.",
+    documento: "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Grammar_and_types"
+  },
+  atribuicao: {
+    titulo: "Atribuição e alteração de valores",
+    texto: "O operador = atribui um valor a uma variável. Operadores como +=, -= e *= calculam e atribuem o novo resultado. Uma variável declarada com let pode receber outro valor; uma constante não pode ser reatribuída.",
+    documento: "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Operators/Assignment"
+  },
+  objetos: {
+    titulo: "Objetos e acesso a propriedades",
+    texto: "Um objeto reúne informações relacionadas em pares de propriedade e valor. A notação de ponto, como pessoa.nome, permite consultar, alterar ou criar uma propriedade.",
+    documento: "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Working_with_objects"
+  },
+  metodos: {
+    titulo: "Propriedades e métodos de texto",
+    texto: "Propriedades descrevem um valor, como length. Métodos executam uma ação e usam parênteses, como toUpperCase(), includes() e trim(). Métodos podem retornar um novo valor sem alterar o texto original.",
+    documento: "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String"
+  },
+  operadores: {
+    titulo: "Operadores e expressões",
+    texto: "Operadores realizam cálculos, comparações e atribuições. Uma expressão combina valores e operadores para produzir um resultado que pode ser guardado ou usado em uma condição.",
+    documento: "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Expressions_and_operators"
+  },
+  if: {
+    titulo: "Decisão com if",
+    texto: "A estrutura if executa um bloco somente quando sua condição resulta em true. Comparações e operadores lógicos ajudam a formar condições mais completas.",
+    documento: "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/if...else"
+  },
+  "else-if": {
+    titulo: "Condições encadeadas com else if",
+    texto: "else if permite testar outra condição quando a anterior é falsa. A ordem importa: o JavaScript executa o primeiro bloco verdadeiro e ignora os seguintes.",
+    documento: "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/if...else"
+  },
+  switch: {
+    titulo: "Escolha entre casos com switch",
+    texto: "switch compara uma expressão com diferentes valores de case. break encerra o caso atual e default trata valores que não correspondem a nenhuma opção.",
+    documento: "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/switch"
+  },
+  for: {
+    titulo: "Repetição controlada com for",
+    texto: "O laço for reúne inicialização, condição e atualização. Ele é útil quando sabemos quantas vezes uma ação deve acontecer ou quando contamos posições.",
+    documento: "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/for"
+  },
+  while: {
+    titulo: "Repetição com while",
+    texto: "while repete um bloco enquanto a condição for verdadeira. Algum valor usado na condição deve ser atualizado para evitar uma repetição infinita.",
+    documento: "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/while"
+  },
+  break: {
+    titulo: "Interrupção com break",
+    texto: "break encerra imediatamente o laço mais próximo. Normalmente ele aparece dentro de um if quando o programa encontra o valor procurado ou atinge um limite.",
+    documento: "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/break"
+  },
+  arrays: {
+    titulo: "Arrays e coleções ordenadas",
+    texto: "Array é uma lista ordenada cujos elementos são acessados por índices iniciados em zero. A propriedade length informa a quantidade de elementos e vários métodos ajudam a modificar ou percorrer a lista.",
+    documento: "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array"
+  },
+  "funcoes-dom": {
+    titulo: "Funções, objetos e interação com a página",
+    texto: "Funções agrupam instruções reutilizáveis. Objetos organizam dados e comportamentos. Por meio do DOM, o JavaScript encontra elementos do HTML, altera conteúdo e reage às ações do usuário.",
+    documento: "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Functions"
+  }
+};
+
+const guiasEspecificos = [
+  { padrao: /length|último elemento/i, titulo: "Propriedade length", texto: "length informa quantos elementos existem no array. Como os índices começam em zero, o último elemento fica na posição length - 1.", documento: "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/length" },
+  { padrao: /forEach/i, titulo: "Método forEach()", texto: "forEach executa uma função uma vez para cada elemento do array. A função recebe o elemento atual e, opcionalmente, seu índice.", documento: "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach" },
+  { padrao: /push/i, titulo: "Método push()", texto: "push adiciona um ou mais elementos ao final do array e retorna o novo tamanho da lista.", documento: "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/push" },
+  { padrao: /pop/i, titulo: "Método pop()", texto: "pop remove e retorna o último elemento do array. Se a lista estiver vazia, o resultado será undefined.", documento: "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/pop" },
+  { padrao: /unshift/i, titulo: "Método unshift()", texto: "unshift adiciona um ou mais elementos ao início do array e desloca os elementos existentes para índices posteriores.", documento: "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift" },
+  { padrao: /indexOf/i, titulo: "Método indexOf()", texto: "indexOf procura um valor e retorna seu primeiro índice. Quando não encontra o elemento, retorna -1.", documento: "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf" },
+  { padrao: /splice/i, titulo: "Método splice()", texto: "splice altera o próprio array a partir de uma posição. Ele pode remover elementos e também inserir novos valores.", documento: "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/splice" },
+  { padrao: /matriz/i, titulo: "Matrizes e arrays aninhados", texto: "Uma matriz pode ser representada por arrays dentro de outro array. Dois índices acessam linha e coluna, e laços aninhados percorrem todos os valores.", documento: "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Indexed_collections" },
+  { padrao: /função anônima/i, titulo: "Função anônima", texto: "Uma função anônima não possui nome próprio. Ela pode ser guardada em uma variável ou enviada como argumento para outro método.", documento: "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Functions" },
+  { padrao: /arrow/i, titulo: "Arrow function", texto: "Arrow functions usam a sintaxe => e oferecem uma forma curta de escrever funções. Parâmetros ficam antes da seta e o resultado pode ser retornado pelo bloco.", documento: "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Functions/Arrow_functions" },
+  { padrao: /construtor|construtora/i, titulo: "Função construtora e new", texto: "Uma função construtora funciona como um modelo para objetos. O operador new cria uma nova instância e this aponta para o objeto que está sendo construído.", documento: "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Working_with_objects" },
+  { padrao: /árvore|navegar no DOM/i, titulo: "Árvore do DOM", texto: "O navegador representa o HTML como uma árvore de nós. Relações de pai, filhos e irmãos permitem navegar entre elementos relacionados.", documento: "https://developer.mozilla.org/pt-BR/docs/Web/API/Document_Object_Model/Introduction" },
+  { padrao: /DOM|selecionar|conteúdo|estilo e classe/i, titulo: "Manipulação do DOM", texto: "A API do DOM permite selecionar elementos e alterar texto, atributos, classes e estilos. As mudanças feitas pelo JavaScript aparecem imediatamente na página.", documento: "https://developer.mozilla.org/pt-BR/docs/Web/API/Document_Object_Model/Introduction" },
+  { padrao: /evento/i, titulo: "Eventos em JavaScript", texto: "Eventos representam ações como clique, digitação e envio de formulário. addEventListener registra uma função que será executada quando o evento acontecer.", documento: "https://developer.mozilla.org/pt-BR/docs/Web/API/EventTarget/addEventListener" }
+];
+
+function obterExplicacao(atividade, tema) {
+  const busca = `${atividade.titulo} ${atividade.enunciado}`;
+  const especifico = guiasEspecificos.find((guia) => guia.padrao.test(busca));
+  const guia = especifico || guiasPorTema[tema.id] || guiasPorTema.variaveis;
+
+  return {
+    ...guia,
+    aplicacao: `Nesta atividade, o objetivo é: ${atividade.enunciado} A dica indica o primeiro passo: ${atividade.dica}`,
+    exemplo: atividade.solucao
+  };
+}
 const desafio1 = {
   titulo: "1° Desafio — Cartão de humor interativo",
   descricao: "Crie uma página que muda de aparência e mensagem quando o usuário clica em um botão.",
@@ -1447,6 +1543,7 @@ function renderConteudo() {
       numeroGlobal++;
       const id = `tema-${temaIndex}-atividade-${atividadeIndex}`;
       const concluida = !!estado[id];
+      const explicacao = obterExplicacao(atividade, tema);
 
       const card = document.createElement("article");
       card.className = "activity-card" + (concluida ? " completed" : "");
@@ -1476,6 +1573,7 @@ function renderConteudo() {
           <button class="action-btn copiar-codigo">Copiar código</button>
           <button class="action-btn mostrar-dica">Mostrar dica</button>
           <button class="action-btn mostrar-solucao">Ver solução</button>
+          <button class="action-btn mostrar-explicacao">Ver explicação</button>
           <button class="action-btn primary concluir">
             ${concluida ? "Concluída ✓" : "Marcar como concluída"}
           </button>
@@ -1486,6 +1584,31 @@ function renderConteudo() {
           <p>${atividade.dica}</p>
         </div>
 
+
+        <div class="extra-box explanation-box explicacao hidden">
+          <div class="explanation-heading">
+            <span class="explanation-icon">?</span>
+            <div>
+              <strong>${explicacao.titulo}</strong>
+              <p>${explicacao.texto}</p>
+            </div>
+          </div>
+          <div class="explanation-application">
+            <strong>Como aplicar nesta atividade</strong>
+            <p>${explicacao.aplicacao}</p>
+          </div>
+          <strong>Exemplo aplicado</strong>
+          <div class="code-window explanation-code">
+            <div class="code-toolbar">
+              <span class="window-dots"><i></i><i></i><i></i></span>
+              <span>Exemplo JavaScript</span>
+            </div>
+            <pre><code>${escaparHtml(explicacao.exemplo)}</code></pre>
+          </div>
+          <a class="doc-link" href="${explicacao.documento}" target="_blank" rel="noopener noreferrer">
+            Consultar documentação oficial da MDN ↗
+          </a>
+        </div>
         <div class="extra-box solution-box solucao hidden">
           <strong>Solução sugerida</strong>
           <div class="code-window" style="margin:12px 0 0">
@@ -1592,6 +1715,12 @@ document.addEventListener("click", (event) => {
     event.target.textContent = box.classList.contains("hidden") ? "Ver solução" : "Ocultar solução";
   }
 
+
+  if (event.target.classList.contains("mostrar-explicacao")) {
+    const box = card.querySelector(".explicacao");
+    box.classList.toggle("hidden");
+    event.target.textContent = box.classList.contains("hidden") ? "Ver explicação" : "Ocultar explicação";
+  }
   if (event.target.classList.contains("copiar-solucao")) {
     copiar(card.querySelector(".solucao code").innerText, event.target);
   }
